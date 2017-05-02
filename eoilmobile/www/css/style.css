@@ -1,0 +1,48 @@
+html,body{
+	background: #E6EEEE;
+	font-family: "Microsoft YaHei","微软雅黑",Helvetica,"黑体",Arial,Tahoma  !important;
+}
+.pane, .view{
+	background-color: #E6EEEE;
+}
+.row{
+	background: #FFFFFF;
+}
+.item-divider,.item-right-editable.activated,
+.item-complex.item-right-editable.activated, a.item.item-right-editable.activated, button.item-right-editable.activated{
+	background-color: #E6EEEE !important;
+}
+.bar.bar-stable{
+	background-color: #27A187;
+	color: #FFFFFF ;
+}
+
+.bar.bar-stable .title{
+	color: #FFFFFF !important;
+}
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{
+	color:#27A187
+}
+
+.bar-stable .button.button-clear{
+	color: #FFFFFF;
+}
+.home-slider{
+	min-height: 150px;
+	background: #FFFFFF;
+}
+.slider-pager .slider-pager-page{
+	width: 8px;
+	margin:0px 8px;
+	color: #27A187;
+}
+.img-responsive{
+	max-width: 100%;
+	height: auto;
+}
+.text-center{
+	text-align: center;
+}
+.margin-10{
+	margin-top: 10px;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>智能匹配</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/frozen.css" />
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		
+		<style>
+			.ui-searchbar-wrap{
+				background-color: #C9C9CC;
+				padding-left: 5px;
+				line-height: 44px;
+			}
+			.swiper-container {
+        width: 100%;
+        height: 250px;
+    }
+    .swiper-slide{
+    	 position: relative;
+    	 background: #fff;
+    }
+    .swiper-slide ,.goods-lock{
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .goods-container{
+    	  position: relative;
+    	  width: 100%;
+    }
+    .goods-lock{
+    	 position: absolute;
+    	 top:0;
+    	 left:0;
+    	 color: #ffff ;
+    	 font-size: 36px !important;
+    	 background: rgba(0,0,0,0.3);
+    	 width: 100%;
+    	 height: 220px;
+    }
+     .goods-action{
+     	position: absolute;
+     	left:0;
+     	bottom: 0;
+     	width:100%;
+     	z-index: 99;
+     	padding: 5px;
+     	background: #FFFFFF;
+     	height: 30px;
+     }
+     .goods-action .iconfont{
+     	color: #E16697;
+     }
+     .img-responsive{
+     	max-height: 220px;
+     }
+     .star{
+     	padding: 5px;
+     }
+		</style>
+	</head>
+	<body>
+		
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper" >
+		<div class="">
+		<div class="searh-bar">
+			<div class="ui-searchbar-wrap ui-border-b">
+			<i class="mui-icon iconfont icon-fenlei"></i>
+		    <div class="ui-searchbar ui-border-radius">
+		        <i class="ui-icon-search"></i>
+		        <div class="ui-searchbar-text">搜索</div>
+		        <div class="ui-searchbar-input"><input value="" type="text" placeholder="搜索" autocapitalize="off"></div>
+		        <i class="ui-icon-close"></i>
+		    </div>
+		    <button class="ui-searchbar-cancel">搜索</button>
+		 </div>
+		</div>
+			<div id="goods-list">
+				<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>
+			
+				<!--<div>
+					<div id="fiveStar"></div>
+			    <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<div class="img-container">
+			            <img src="../../images/banner-01.png" class="img-responsive"/>
+			            </div>
+			            <div class="goods-lock">
+			            	<span class="mui-icon mui-icon-locked"></span>
+			            </div>
+			            	<div class="goods-action">
+			            		<p>
+			            		<span class="red mui-pull-left">￥298</span>
+			            		<span class=" mui-pull-right ">
+			            			<i class="mui-icon iconfont icon-gouwuche goods-cart" data-id='1' >
+			            				
+			            			</i>	<i class="mui-icon iconfont icon-xihuan1 goods-love" data-id='2' ></i>
+			            		</span>
+			           		 </p>
+			            	</div>
+			            </div>
+			            <div class="swiper-slide">Slide 2</div>
+			            <div class="swiper-slide">Slide 3</div>
+			            <div class="swiper-slide">Slide 4</div>
+			            <div class="swiper-slide">Slide 5</div>
+			            <div class="swiper-slide">Slide 6</div>
+			            <div class="swiper-slide">Slide 7</div>
+			            <div class="swiper-slide">Slide 8</div>
+			            <div class="swiper-slide">Slide 9</div>
+			            <div class="swiper-slide">Slide 10</div>
+			        </div>
+			    </div>
+			    </div>-->
+			</div>
+		</div>
+		</div>
+	</body>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="../../js/frozen.js" ></script>
+	    <script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/app.js"></script>
+		<script type="text/javascript" src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../js/swiper.min.js" ></script>
+	    <script type="text/javascript" src="../../raty/jquery.raty.js" ></script>
+	    <script type="text/javascript" src="../../js/goods-cart-love.js" ></script>
+	<script>
+	     $('.ui-searchbar').click(function(){
+	     $('.ui-searchbar-wrap').addClass('focus');
+	     $('.ui-searchbar-input input').focus();
+	    });
+	    $('.ui-icon-close').click(function(e){
+	    	    e.stopPropagation();
+	        $('.ui-searchbar-wrap').removeClass('focus');
+	    });
+	    
+	    var swiper = new Swiper('.swiper-container', {
+	       // pagination: '.swiper-pagination',
+	        slidesPerView: 2,
+	        paginationClickable: true,
+	        spaceBetween: 3
+	    });
+	    
+	    $('#fiveStar').raty({ readOnly: true, score: 5,path:'../../raty/images' });
+	
+		mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+    
+	    //下拉刷新
+		function pulldownRefresh() {
+			console.log('下拉刷新');			
+			getGoodsList('down');
+		}
+		//上拉加载更多
+		function pullupRefresh() {
+			getGoodsList('up');
+		}
+		
+		window.addEventListener('refresh-down',function(){	
+			getGoodsList('down');
+		});
+		
+		var page=1;
+		var status=0;
+		function getGoodsList(direction){
+			var user=app.getUserState();
+			if(JSON.stringify(user)=='{}'){
+				$('#goods-list').html('<p>请下拉刷新</p>');
+				return;
+			}
+			if(direction=='down'){
+				page=1;
+			}			
+			var data={
+				page:page,
+				direction:direction,
+			};
+			
+			mui.ajax({
+				url:config.getGoodsListUrl,
+				type:"post",
+				data:{
+					user:user,
+					data:data
+				},
+				success:function(rs){
+					console.log(JSON.stringify(rs));
+					closePullRefresh();
+					if(rs=='nodata'){
+						if(direction=='down'){
+							$('#goods-list').html('<p>暂时没有商品!</p>');
+						}else if(direction=='up'){
+							plus.nativeUI.toast('没有更多商品了!');
+						}
+						
+					}else{
+						page++;
+						if(direction=='down'){
+							$('#goods-list').html(rs);
+						}else if(direction=='up'){
+							$('#goods-list').append(rs);
+						}
+						
+							var swiper = new Swiper('#swiper0', {
+							     slidesPerView: 2,
+							     paginationClickable: true,
+							     spaceBetween: 3
+							 });
+							 
+							 var swiper = new Swiper('#swiper1', {
+							     slidesPerView: 2,
+							     paginationClickable: true,
+							     spaceBetween: 3
+							 });
+							 
+							 var swiper = new Swiper('#swiper2', {
+							     slidesPerView: 2,
+							     paginationClickable: true,
+							     spaceBetween: 3
+							 });
+						
+					    
+					    $('#fiveStar').raty({ readOnly: true, score: 5,path:'../../raty/images' });
+					     $('#fourStar').raty({ readOnly: true, score: 4,path:'../../raty/images' });
+					      $('#threeStar').raty({ readOnly: true, score: 3,path:'../../raty/images' });
+					}
+				},
+				error:function(e){
+					closePullRefresh();
+					plus.nativeUI.toast('刷新列表失败!');
+					console.log(JSON.stringify(e));
+				}
+			});
+		}
+		
+		$(document).on('tap','.img-container',function(){
+				var url=$(this).data('url');
+				var id=$(this).data('id');
+				mui.openWindow({
+				url:'../../load-url.html',
+				extras:{
+				url:url,
+				id:id
+				}
+			})
+		});
+		
+
+		//关闭刷新
+		function closePullRefresh(){			
+			mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); 		
+			mui('#pullrefresh').pullRefresh().endPullupToRefresh(); 	
+		}
+		
+		if (mui.os.plus) {
+				mui.plusReady(function() {
+					
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pulldownLoading();
+					}, 500);
+
+				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pulldownLoading();
+				});
+		}
+		
+		window.addEventListener('show',function(){
+			
+		});
+		
+	
+	
+	</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发布</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.css" />
+		<link rel="stylesheet" href="../../css/mui.poppicker.css" />
+		<script src="../../js/mui.min.js"></script>
+	   <script type="text/javascript" src="../../js/app.js" ></script>
+	  <script type="text/javascript" src="../../js/moment.min.js" ></script>
+		<script type="text/javascript" src="../../js/zepto.min.js" ></script>
+		<script type="text/javascript" src="../../js/config.js" ></script>
+		<script type="text/javascript" src="../../js/mui.picker.js" ></script>
+		<script type="text/javascript" src="../../js/mui.poppicker.js" ></script>
+	    <script type="text/javascript" src="../../js/angular.min.js" ></script>
+	    <script type="text/javascript" src="../../js/services/httpService.js" ></script>
+	    <script type="text/javascript" src="../../js/lrz.bundle.js" ></script>
+	    <script type="text/javascript" src="../../js/lodash.min.js" ></script>
+	    <script type="text/javascript" src="../../js/controller/appeal.js" ></script>
+	   <style>
+	   	.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	   		height: 100px;
+	   		line-height: 70px;
+	   	}
+	   .mui-table-view:after{
+	   	background-color: #FFFFFF;
+	   }
+	   	
+	   </style>
+	</head>
+	<body ng-app="eoil" ng-controller="pubCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title">申诉</h1>
+			<button   class="mui-btn  mui-btn-link mui-pull-right" ng-click="submit()">提交</button>
+		</header>
+		<div class="mui-content">
+			<div  >
+		<ul class="mui-table-view ">
+			<li class="mui-table-view-cell">
+				申诉凭证
+			</li>
+		</ul>
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 product-photo" ng-repeat="item in formData.imgs" >
+							<div class="flex-container text-center" >
+								<span ng-click="remove($index)"  class="remove-photo mui-icon mui-icon-minus-filled red" style="font-size: 24px;position: absolute;top: -2px;right: -2px;"></span>
+								<img ng-src="{{item}}"  class="img-responsive"/>
+				           </div>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" ng-click="addPhoto()">
+								<div class="img-container text-center " >
+									<span class="iconfont icon-xinjiandingdan"></span>
+									<div class="img-btm text-center">
+										<p>添加图片</p>
+									</div>
+					           </div>
+						</li>
+		</ul>	
+		
+		<form id='login-form' class="mui-input-group" style="margin-top: 5px;" >
+			<div class="mui-input-row">
+					<label>申诉理由</label>
+			</div>
+			<textarea class="mui-input" ng-model="formData.content" placeholder="请填写申诉理由(必填)" rows="8"></textarea>
+			
+		</form>	
+	</div>
+	<!--<div class="empty-info" ng-if="!userInfo.is_auth">
+		<p>您还未认证,认证后才能发布商品</p>
+		<p class="text-center"><button class="mui-btn mui-btn-success" ng-click="goAuth()">去认证</button></p>
+	</div>-->
+		</div>
+	</body>
+		
+	<script type="text/javascript">
+		//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+		});
+		
+	</script>
+
+</html>

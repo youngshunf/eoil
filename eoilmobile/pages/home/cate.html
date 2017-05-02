@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品分类</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/frozen.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<style>
+		  .mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				padding: 5px 5px;
+				border: none;
+			}
+			.mui-media-body .title{
+				color: #666666;
+				font-weight: normal;
+				font-size: 13px;
+				height: 55px;
+				overflow: hidden;
+			}
+			.mui-media-body .sub-txt{
+				font-size: 12px;
+				color: #999999;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">商品分类</h1>
+		</header>
+		<div class="mui-content " >
+		<div class="">
+		<div id="cate-list" class=" mui-content">
+				<!--<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>-->
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="1">
+								<a href="#" >
+									<img src="../../images/icon/o_factory.png" class="img-responsive" />
+									<div class="mui-media-body">炼油厂</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="2">
+								<a href="#" >
+									<img src="../../images/icon/c_factory.png" />
+									<div class="mui-media-body">化工厂</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="3">
+								<a href="#" >
+									<img src="../../images/icon/man.png" />
+									<div class="mui-media-body">业务员</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate " data-cateid="4">
+								<a href="#" >
+									<img src="../../images/icon/car.png" />
+									<div class="mui-media-body">油罐车</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="5" >
+								<a href="#"  >
+									<img src="../../images/icon/oil.png" />
+									<div class="mui-media-body">成品油</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="6">
+								<a href="#" id="tiyan">
+									<img src="../../images/icon/chemistry.png" />
+									<div class="mui-media-body">化工</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="7">
+								<a href="#" id="tiyan">
+									<img src="../../images/icon/car_enterprise.png" />
+									<div class="mui-media-body">车型</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cate-list" >
+								<a href="#" >
+									<img src="../../images/icon/more.png" />
+									<div class="mui-media-body">更多</div>
+								</a>
+							</li>
+						</ul>
+			<!--<div class="mui-col-xs-3" style="border-right: 1px solid #c8c7cc;">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical" style="min-height: 800px;">
+				<a class="mui-control-item mui-active" href="#item1"> 选项1 </a>
+				<a class="mui-control-item " href="#item2"> 选项2</a>
+				<a class="mui-control-item " href="#item3"> 选项3</a>
+				</div>
+			</div>-->
+			<!--<div id="segmentedControlContents" class="mui-col-xs-9" >
+				<div id="item1" class="mui-control-content mui-active">
+				 <ul class="mui-table-view">
+				 	<li class="mui-table-view-cell mui-media goods" data-id="">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="<?= yii::$app->params['photoUrl'].$photo->path.'thumb/'.$photo->photo?>">
+						<div class="mui-media-body">
+							<div class="title ">哈哈
+							<p ><span class="red">￥12</span> <span class="sub-txt">/ 吨</span></p>
+							<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>北京市海淀区</p>
+							</div>
+							
+						</div>
+					</a>
+				</li>
+				 </ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					 <ul class="mui-table-view">
+				 	<li class="mui-table-view-cell mui-media goods" data-id="">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="<?= yii::$app->params['photoUrl'].$photo->path.'thumb/'.$photo->photo?>">
+						<div class="mui-media-body">
+							<div class="title ">啦啦啦
+							<p>2016-11-27</p></div>
+							<p><span class="red">￥ 12</span> / 吨</p>
+						</div>
+					</a>
+				</li>
+				 </ul>
+				</div>
+				<div id="item3" class="mui-control-content">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a href="#" id="cate" data-id="1">
+									炼油厂
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a href="#" id="cate" data-id="2">
+									化工厂
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a href="#" id="cate" data-id="3">
+									业务员
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 cate " data-id=4>
+								<a href="#" id="cate" data-id="4">
+									油罐车
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 cate" data-id="5" >
+								<a href="#"  >
+									成品油div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a href="#" id="tiyan">
+									化工
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a href="#" id="tiyan">
+									车型
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+								<a href="#" id="tiyan">
+									更多
+								</a>
+							</li>
+						</ul>
+				</div>
+			</div>-->
+		</div>
+		</div>
+		</div>
+	</body>
+		<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="../../js/frozen.js" ></script>
+	    <script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/app.js"></script>
+		<script type="text/javascript" src="../../js/config.js"></script>
+	<script>
+	    
+		mui.init();
+		mui.plusReady(function(){
+			
+			getGoodsCateList();
+		});
+       
+	   function getGoodsCateList(cateid){
+			
+			mui.ajax({
+				url:app.getAuthUrl(config.getGoodsCateListUrl),
+				type:"post",
+				success:function(rs){
+					console.log(rs);
+					$('#cate-list').html(rs);
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	
+		mui(document).on('tap','.goods-cate',function(){
+			var cateid=$(this).data('cateid');
+			console.log(cateid);
+			mui.openWindow({
+				url:'goods.html',
+				extras:{
+					cateid:cateid
+				}
+			})
+		})
+
+		
+		
+		window.addEventListener('show',function(){
+			
+		});
+		
+	
+	
+	</script>
+</html>

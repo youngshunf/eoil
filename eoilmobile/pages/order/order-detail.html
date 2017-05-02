@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<style>
+			.modal-container{
+				position: absolute;
+			    top: 50%;
+			    height: 100%;
+			    width: 100%;
+			}
+			.modal-container .mui-content{
+				background: #FFFFFF;
+			}
+			.mui-modal{
+				background: rgba(0,0,0,0.2);
+			}
+			.cart-btn a,.buy-btn a{
+				color: #FFFFFF;
+			}
+			ul.mui-table-view{
+				margin-bottom: 5px;
+			}
+			.mui-icon{
+				font-size: 13px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">订单详情</h1>
+		</header>
+		<div class="mui-content" id="order-detail">
+			<!--<ul class="mui-table-view">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p >订单号:88888 <span class="red mui-pull-right">[供货保证金]</span></p>
+				<p class="sub-txt">下单时间 : 2016-12-3 </p>
+				<p class="sub-txt">状态 : <span class="red">待支付</span></p>
+			</li>
+			</ul>
+			<ul class="mui-table-view">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p >李德华 <span class="mui-pull-right">18628712332</span></p>
+				<p class="sub-txt"><span class="mui-icon mui-icon-location"></span>北京市</p>
+			</li>
+			</ul>
+			
+		    <ul class="mui-table-view">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p >商品名称</p>
+			</li>
+			 <li class="mui-table-view-cell mui-media" >
+				<img class="mui-media-object mui-pull-left " src="../../images/home.png">
+					<div class="mui-media-body" style="margin-top: 15px;">
+						<p> 李娜</p>
+						<p class="sub-txt"><span class="red">￥123</span></p>
+				</div>
+			</li>
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p>数量:20 <span class="mui-pull-right">保证金:￥300</span></p>
+			</li>
+			<li class="mui-table-view-cell down-count " data-time="01/22/2017 11:56">
+				<p class="red">请在30分钟内完成支付，否则订单自动关闭.</p>
+				<p class="red">支付剩余时间: <span class="J_TimeLeft prev"> <i class="minutes">00</i> 分 <i class="seconds">00</i> 秒</span>
+				</p>
+			</li>
+			</ul>
+			<ul class="mui-table-view" style="padding-bottom: 100px;">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p>选择支付方式</p>
+			</li>
+			<li class="mui-table-view-cell mui-radio mui-left">
+						<input name="payType" type="radio" value="wxpay">微信支付
+					</li>
+					<li class="mui-table-view-cell mui-radio mui-left">
+						<input name="payType" type="radio" value="alipay">支付宝
+					</li>
+			</ul>
+			-->
+			<!--<div class="bottom-button mui-row " id="shop-btn">
+				
+			<div class="mui-col-xs-6 cart-btn flex-center" id="cancel-order">
+				<a href="#">取消订单</a>
+			</div>
+			<div class="mui-col-xs-6 buy-btn flex-center" id="pay-order">
+				<a href="#">立即支付</a>
+			</div>
+			</div>-->
+			
+		</div>
+		
+		
+		
+		
+		
+		
+</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/swiper.min.js" ></script>
+	<script type="text/javascript" src="../../js/app.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>	
+	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+    <script type="text/javascript" src="../../js/pay.js" ></script>
+    <script type="text/javascript" src="../../js/jquery.downCount.js" ></script>
+	<script>
+	var orderData={};
+	var userInfo;
+	mui.init();
+	mui.plusReady(function(){
+		var self=plus.webview.currentWebview();
+		var id=self.orderid;
+		userInfo=app.getUserInfo();
+		getOrderData(id);
+		getOrderDetail(id);
+		getPaymentChannels();
+		
+	});
+	function getOrderDetail(id){
+		console.log('ordersid:'+id);
+			var data={
+				id:id,						
+			};
+			mui.ajax({
+				url:app.getAuthUrl(config.getOrderDetailUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					$('#order-detail').html(rs);
+					 var countTime=$('.down-count').attr('data-time');
+			            $('.down-count').downCount({
+			        		date: countTime,
+			        		offset: +10
+			        	}, function () {
+			        		$('#pay-order').parent().addClass('hide');
+			        	});
+				},
+				error:function(e){
+					console.log(e.status);
+					mui.toast('获取订单详情失败');
+				}
+			});
+	}
+	
+	function getOrderData(id){
+		console.log('goodsid:'+id);
+					
+			var data={
+				id:id,						
+			};
+			mui.ajax({
+				url:app.getAuthUrl(config.getOrderDataUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					console.log(rs);
+					if(typeof rs=='string'){
+						rs=JSON.parse(rs);
+					}
+					if(rs.result=='success'){
+						orderData=rs.data;
+					}
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	mui(document).on('tap','#pay-order',function(){
+		var orderid=$(this).data('orderid');
+		var payType=$('input[name=payType]:checked').val();
+		console.log('支付方式:'+payType);
+		if(!payType || (payType!='wxpay' && payType !='alipay')){
+			mui.alert('请选择支付方式!');
+			return false;
+		}
+		var orderType;
+		if(userInfo.user_guid==orderData.user_guid){
+			orderType=1;
+		}else if(userInfo.user_guid==orderData.seller_user){
+			orderType=2;
+		}
+		console.log(orderType);
+		plus.nativeUI.showWaiting();
+		console.log(orderid);
+		var data={
+			orderid:orderid,
+			payType:payType,
+			orderType:orderType
+		};
+		console.log(data);
+		$.ajax({
+				url:app.getAuthUrl(config.getPayOrderUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					plus.nativeUI.closeWaiting();
+					console.log(rs);
+					if(rs=='payed'){
+						mui.alert('此订单您已经支付过了,请不要重复支付');
+						mui.back();
+						return false;
+					}
+					if(rs=='closed'){
+						mui.alert('此订单已关闭,不能再支付');
+						mui.back();
+						return false;
+					}
+					if(payType=='alipay'){
+						var order=rs;
+						pay(payType,order,orderid,orderType);
+						plus.nativeUI.closeWaiting();
+					}
+					
+					if(payType=='wxpay'){
+						if(typeof rs=='string'){
+							rs=JSON.parse(rs);
+						}
+						if(rs.result=='success'){
+							var order=rs.data;
+							pay(payType,order,orderid,orderType);
+							plus.nativeUI.closeWaiting();
+						}else{
+							plus.nativeUI.closeWaiting();
+							mui.toast('获取订单失败!');
+						}
+					}
+					
+				},
+				error:function(e){
+					console.log(e.status);
+					plus.nativeUI.closeWaiting();
+					mui.toast('获取订单失败!');
+				}
+			});
+	})
+	
+	 mui(document).on('tap','.goods',function(){
+			var id=$(this).data('goodsid');
+			console.log(id);
+			mui.openWindow({
+				url:'../goods-detail.html',
+				extras:{
+					goodsid:id
+				}
+			})
+	})
+	 
+	 mui(document).on('tap','#cancel-order',function(){
+			var id=$(this).data('orderid');
+			var data={
+			orderid:id
+		};
+		plus.nativeUI.confirm('您确定要取消订单吗?',function(e){
+			if(e.index==1){
+			mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.cancelOrderUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				console.log(rs);
+				if(typeof rs =='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.alert('操作成功!');
+				}else{
+					mui.toast('操作失败');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('操作失败:'+e.status);
+			}
+		})
+			}
+		},'提示',['取消','确定']);
+	 })
+	 
+	  mui(document).on('tap','#confirm-order',function(){
+			var id=$(this).data('orderid');
+			var data={
+			orderid:id
+		};
+		plus.nativeUI.confirm('双方确认履约后,保证金将在7日内退回各自账户，您确定确认履约吗?',function(e){
+			if(e.index==1){
+			mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.confirmOrderUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				console.log(rs);
+				if(typeof rs =='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.alert('操作成功,您的保证金将在7日内退回您的钱包,请注意查收.');
+					getOrderDetail(id);
+					
+				}else{
+					mui.toast('操作失败');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('操作失败:'+e.status);
+			}
+		})
+			}
+		},'提示',['取消','确定']);
+	 })
+	  
+	   $(document).on('click','#withdraw-order',function(){
+			var id=$(this).data('id');
+			var data={
+			orderid:id
+		};
+		plus.nativeUI.confirm('保证金退还后用户不能再下单，您确定要退还保证金吗?',function(){
+			mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.withdrawOrderUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				console.log(rs);
+				if(typeof rs =='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.alert('操作成功,您的保证金将在7个工作日内退还到您的钱包，请注意查收.');
+					init();
+					
+				}else{
+					mui.toast('操作失败');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('操作失败:'+e.status);
+			}
+		})
+		},'提示');
+	 })
+	
+	mui(document).on('tap','.user-location',function(){
+		var user=$(this).data('user');
+		console.log(user);
+		mui.openWindow({
+			url:'../user_location.html',
+			extras:{
+				user:user
+			}
+		})
+	});
+	
+	mui(document).on('tap','#appeal-order',function(){
+		var id=$(this).data('orderid');
+		mui.openWindow({
+			url:'appeal.html',
+			extras:{
+				orderid:id
+			}
+		});
+	});
+	mui(document).on('tap','#comment-order',function(){
+		var id=$(this).data('orderid');
+		mui.openWindow({
+			url:'comment.html',
+			extras:{
+				orderid:id
+			}
+		});
+	});
+	
+	</script>
+</html>

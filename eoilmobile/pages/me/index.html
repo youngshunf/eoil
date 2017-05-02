@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	   <link rel="stylesheet" href="../../css/iconfont.css" />
+		<style>
+			.head{
+				text-align: center;
+			}
+			.head img{
+				  width: 90px;
+				  height: auto;
+				  padding: 10px;
+			}
+			
+			p {
+			  line-height: 22px;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell>a:not(.mui-btn) {
+			  margin: 0;
+			  padding: 5px 0;
+			}
+			
+			a{
+				color: #666666 !important; 
+				font-size: 14px;
+			}
+		
+			ul.head-info{
+				background: rgb(3,163,215);
+				background-size: 100% 100%;
+			}
+			.user-info .mui-navigate-right:after{
+				color: #FFFFFF;
+			}
+			.mui-table-view li {
+				background: none;
+			}
+			.mui-grid-view.mui-grid-9 {
+				background: none;
+				border:none;
+				}
+			.with-draw{
+				background: rgb(224, 228, 234) !important;
+				  /*box-shadow: 0 0 5px #687C8B;*/
+			}
+			.mui-table-view-cell .mui-media{
+				color: #FFF !important;
+				
+			}
+			.me-box .iconfont{
+				color: #27A187;
+			}
+			.head p{
+				color: #FFFFFF;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				border-top:none;	
+			}
+			.mui-table-view:after{
+				background: none;
+			}
+			.circle {
+			  width: 40px;
+			  height: 40px;
+			  border-radius: 20px;
+			  line-height: 40px;
+			}
+		
+			.red-info {
+			  border: 1px solid rgb(255, 3, 3);
+			  color: rgb(255, 0, 0);
+			  font-size: 18px;
+			  }
+			 .blue-info {
+			  border: 1px solid rgb(10, 10, 202);
+			  color: rgb(10, 10, 202);
+			  font-size: 18px;
+			  font-weight: normal;
+			  }
+		  
+		  .green-info {
+		  border: 1px solid rgb(17, 200, 26);
+		  color: rgb(17, 200, 26);
+		  font-size: 18px;
+		  font-weight: normal;
+		}
+		.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+			border: none;
+			}
+		.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+			font-weight: normal;
+			}
+			.signed{
+				color: green;
+			}
+			.signed .iconfont{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+	<!--<header class="mui-bar mui-bar-nav">			
+			<h1 class="mui-title"></h1>
+		</header>-->
+	<div class="mui-content" >			
+	<ul class="mui-table-view " style="margin-top: 0;">
+		
+	<li class="mui-table-view-cell mui-media user-info" id="user-info">
+			<a href="javascript:;" class="mui-navigate-right">
+				<img class="mui-media-object img-circle mui-pull-left" src="../../images/unknown.jpg" id="head-img">
+				<div class="mui-media-body">
+					<p id="name"></p>
+					<p class='mui-ellipsis' id="mobile" ></p>
+					<p class='mui-ellipsis' id="auth" > 
+					<!--<span class="mui-badge mui-badge-danger">已认证</span>-->
+					</p>
+				</div>
+			</a>
+		</li>
+		
+	</ul>
+	
+	<ul class="mui-table-view " >
+		<li class="mui-table-view-cell " style="padding: 5px 5px;">
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="my-pub">
+									<div class="me-box" >
+									<span class=" iconfont icon-fabu3"></span>
+						        </div>
+									<div class="mui-media-body sub-txt "> 我发布的</div>
+							</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="my-wallet">
+									<div class="me-box" id="my-wallet">
+									 <span class=" iconfont icon-qianbao"></span>
+						           </div>
+									<div class="mui-media-body sub-txt">我的钱包</div>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="unsign">
+									<div class="me-box" >
+									 <span class=" iconfont icon-qiandao"></span>
+						          </div>
+									<div class="mui-media-body sub-txt">签到</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4  hide" id="signed">
+						          <div class="signed" >
+									<span class=" iconfont icon-qiandao"></span>
+						          </div>
+									<div class="mui-media-body sub-txt">今日已签到</div>
+							</li>
+						</ul>	
+		</li>
+	</ul>
+		
+		<ul class="mui-table-view"  style="margin-top: 5px;">
+		<li class="mui-table-view-cell" id="message" >
+			<a class="mui-navigate-right">
+				系统通知  <span class="mui-pull-right " id="msg-num" style="margin-right: 15px;"></span>
+			</a>
+		</li>
+		<li class="mui-table-view-cell" id="my-auth" >
+			<a class="mui-navigate-right">
+				我的认证  <span class="mui-pull-right red"> </span>
+			</a>
+		</li>
+		</ul>
+		<ul class="mui-table-view"  style="margin-top: 5px;">
+		<li class="mui-table-view-cell" id="my-score" >
+			<a class="mui-navigate-right">
+				我的积分  <span class="mui-pull-right red"> </span>
+			</a>
+		</li>
+		<li class="mui-table-view-cell" id="my-love">
+			<a class="mui-navigate-right">
+				我的收藏  <span class="mui-pull-right red"> </span>
+			</a>
+		</li>
+		<!--<li class="mui-table-view-cell" id="my-collect">
+			<a class="mui-navigate-right">
+				我收藏的  <span class="mui-pull-right "></span>
+			</a>
+		</li>-->
+		<!--<li class="mui-table-view-cell" id="my-photo">
+			<a class="mui-navigate-right">
+				我的相册 <span class="mui-pull-right "></span>
+			</a>
+		</li>-->
+		<li class="mui-table-view-cell" id="pay-password">
+			<a class="mui-navigate-right">
+				修改支付密码
+			</a>
+		</li>
+		</ul>
+		<ul class="mui-table-view"  style="margin-top: 5px;">
+		<li class="mui-table-view-cell" id="share">
+			<a class="mui-navigate-right">
+				分享
+			</a>
+		</li>
+		<li class="mui-table-view-cell" id="contact">
+			<a class="mui-navigate-right">
+				联系我们
+			</a>
+		</li>
+		<!--<li class="mui-table-view-cell" id="help">
+			<a class="mui-navigate-right">
+				帮助
+			</a>
+		</li>-->
+		<li class="mui-table-view-cell" id="rate">
+		<a class="">邀请码  <span class="mui-pull-right" id="invite-code"></span>
+		</a>
+		</li>
+	</ul>
+	
+	<ul class="mui-table-view logout" style="margin-top: 15px;" id="logout">
+		<li class="mui-table-view-cell center" >
+			<p class="center red" style="font-size: 18px;font-weight: 400;"> 退出登录  </p>	
+		</li>
+	</ul>
+	
+	</div>	
+	</body>
+	<script src="../../js/mui.min.js "></script>
+	<script src="../../js/app.js"></script>
+	<script type="text/javascript" src="../../js/config.js" ></script>
+	<script src="../../js/zepto_1.1.3.js"></script>
+	<script type="text/javascript" src="../../js/share.js" ></script>
+	<script>
+		mui.init();
+		var shares = {};
+		mui.plusReady(function() {
+			plus.share.getServices(function(s) {
+				if (s && s.length > 0) {
+					for (var i = 0; i < s.length; i++) {
+						var t = s[i];
+						shares[t.id] = t;
+					}
+				}
+			}, function() {
+				console.log("获取分享服务列表失败");
+			});
+			
+			checkUserState();	
+			checkSign();
+			getMsgNum();
+		});
+		
+		window.addEventListener('show',function(){
+			checkUserState();
+			checkSign();
+			getMsgNum();
+		});
+		
+		function checkUserState(){
+			//获取用户信息
+			    var userInfo=app.getUserInfo();	
+			    if(!userInfo.user_guid){
+					mui.openWindow({
+						id: 'login',			
+						url:'../../login.html',
+						show: {
+							aniShow: 'pop-in'
+						},
+						waiting: {
+							autoShow: false
+						}
+						});
+			    }
+			  
+			    if(userInfo.name!=null){
+			    	document.getElementById("name").innerHTML=userInfo.name;	
+			    }							
+				if(userInfo.mobile!=null){
+					document.getElementById("mobile").innerHTML=userInfo.mobile;
+				}
+				if(userInfo.register_type=='weixin' || userInfo.register_type=='qq' ){
+					$('#head-img').attr('src',userInfo.img_path);
+				}else{
+					if(userInfo.photo!=null){
+					document.getElementById('head-img').src=avatarUrl+userInfo.path+'thumb/'+userInfo.photo;
+					}
+				}
+				
+//				if(userInfo.score){
+//					document.getElementById("score").innerHTML=userInfo.score;
+//				}
+				if(userInfo.invite_code){
+					$('#invite-code').html(userInfo.invite_code);
+				}
+				if(userInfo.is_auth==1){
+					var html='<span class="mui-badge mui-badge-success">已认证</span>';
+					$('#auth').html(html);
+				}else{
+					var html='<span class="mui-badge mui-badge-danger">未认证</span>';
+					$('#auth').html(html);
+				}
+				
+		}
+		
+		function getMsgNum(){
+			$.ajax({
+				type:"post",
+				url:app.getAuthUrl(config.getMsgNumUrl),
+				dataType:'json',
+				success:function(rs){
+					console.log(rs);
+					if(typeof rs =='string'){
+						rs=JSON.parse(rs);
+					}
+					if(rs.result=='success'){
+						if(rs.data>0){
+							$('#msg-num').html('<span class="mui-badge mui-badge-danger" >'+rs.data+'</span>');
+						}else{
+							$('#msg-num').html('');
+						}
+					}
+				},
+				error:function(e){
+					console.log(e.status);
+				}
+			});
+		}
+		
+		function checkSign(){
+			$.ajax({
+				type:"post",
+				url:app.getAuthUrl(config.checkSignUrl),
+				data:{
+					user:app.getUserState(),
+				},
+				dataType:'json',
+				success:function(rs){
+					console.log(rs);
+					if(typeof rs =='string'){
+						rs=JSON.parse(rs);
+					}
+					if(rs.result=='success'){
+						if(rs.data=='signed'){
+							$('#unsign').addClass('hide');
+							$('#signed').removeClass('hide');
+						}
+					}
+				},
+				error:function(e){
+					console.log(e.status);
+				}
+			});
+		}
+		
+		function userSign(){
+			$.ajax({
+				type:"post",
+				url:app.getAuthUrl(config.userSignUrl),
+				data:{
+					user:app.getUserState(),
+				},
+				dataType:'json',
+				success:function(rs){
+					console.log(JSON.stringify(rs));
+					if(typeof rs =='string'){
+						rs=JSON.parse(rs);
+					}
+					if(rs.result=='success'){
+						localStorage.setItem('$user',JSON.stringify(rs.data));
+						checkUserState();
+							$('#unsign').addClass('hide');
+							$('#signed').removeClass('hide');
+					}
+				},
+				error:function(e){
+					console.log(JSON.stringify(e));
+				}
+			});
+		}
+		document.getElementById('unsign').addEventListener('tap',function(){
+			userSign();
+		});
+		
+		document.getElementById('my-wallet').addEventListener('tap',function(){
+			mui.openWindow({
+				url:'my-wallet.html',
+				id:'my-wallet.html',
+			});
+		});
+		
+		document.getElementById('my-love').addEventListener('tap',function(){
+			mui.openWindow({
+				url:'my-love.html',
+				id:'my-love.html',
+			});
+		});
+		$('#my-score').click(function(){
+			mui.openWindow({
+				url:'my-score.html',
+			});
+		});
+		
+		$('#my-auth').click(function(){
+			var user=app.getUserInfo();
+			if(user.is_submit_data==1){
+				mui.openWindow({
+				url:'my-auth-view.html',
+			});
+			}else{
+				mui.openWindow({
+				url:'my-auth.html',
+			});
+			}
+		});
+		$('#my-pub').click(function(){
+			mui.openWindow({
+				url:'my-pub.html',
+			});
+		});
+		$('#message').click(function(){
+			mui.openWindow({
+				url:'message.html',
+			});
+		});
+		$('#contact').click(function(){
+			var url=serverBaseUrl+'site/contact';
+			mui.openWindow({
+				url:'../../load-url.html',
+				extras:{
+					url:url
+				}
+			});
+		});
+		$('#pay-password').click(function(){
+			mui.openWindow({
+				url:'pay-password.html',
+			});
+		});
+		
+		$('.logout').click(function(){
+		     	app.Logout();
+				mui.openWindow({
+				url:'../../login.html',
+				id:'logout',
+			});
+		});
+		
+		
+		document.getElementById('user-info').addEventListener('tap',function(){
+			mui.openWindow({
+				url:'user-info.html',
+				id:'user-info.html',
+			});
+		});
+		
+		 //分享链接点击事件
+//		document.getElementById("share").addEventListener('tap', function() {
+//			var ids = [{
+//					id: "weixin",
+//					ex: "WXSceneSession"
+//				}, {
+//					id: "weixin",
+//					ex: "WXSceneTimeline"
+//				}, {
+//					id: "sinaweibo"
+//				},
+////				{
+////					id: "tencentweibo"
+////				},
+//				{
+//					id: "qq"
+//				}],
+//				bts = [{
+//					title: "发送给微信好友"
+//				}, {
+//					title: "分享到微信朋友圈"
+//				},
+//				{
+//					title: "分享到新浪微博"
+//				},
+////				{
+////					title: "分享到腾讯微博"
+////				},
+//				{
+//					title: "分享到QQ"
+//				}];
+//			plus.nativeUI.actionSheet({
+//				cancel: "取消",
+//				buttons: bts
+//			}, function(e) {
+//				var i = e.index;
+//				if (i > 0) {
+//					var s_id = ids[i - 1].id;
+//					var share = shares[s_id];
+//					if (share.authenticated) {
+//						shareMessage(share, ids[i - 1].ex);
+//					} else {
+//						share.authorize(function() {
+//							shareMessage(share, ids[i - 1].ex);
+//						}, function(e) {
+//							console.log("认证授权失败：" + e.code + " - " + e.message);
+//						});
+//					}
+//				}
+//			});
+//		});
+//
+//		function shareMessage(share, ex) {
+//				var msg = {
+//					extra: {
+//						scene: ex
+//					}
+//				};
+//				if(mui.os.ios){
+//					msg.href = "https://itunes.apple.com/cn/app/sui-xin-zhuan/id1096034074?mt=8";
+//				}else{
+//					msg.href="http://android.myapp.com/myapp/detail.htm?apkName=com.young.eoil";
+//				}
+//				
+//				msg.title = "e油网是由北京优加石化网络科技有限公司为石化行业倾力打造的永久免费发布信息的平台";
+//				msg.content = "我正在使用e油网,很好用的app，小伙伴赶紧用起来";
+//				if (~share.id.indexOf('weibo')) {
+//					msg.content += "；体验地址：http://suoxinmr.com/";
+//				}
+//				msg.thumbs = ["_www/images/logo.png"];
+//				share.send(msg, function() {
+//					console.log("分享到\"" + share.description + "\"成功！ ");
+//				}, function(e) {
+//					console.log("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
+//				});
+//			}
+
+	</script>
+
+</html>

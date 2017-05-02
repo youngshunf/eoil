@@ -1,0 +1,1428 @@
+2015-07-11 09:57:18 [-][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Setting unknown property: common\models\CarHouseAward::car_house_guid' in E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Component.php:197
+Stack trace:
+#0 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(266): yii\base\Component->__set('car_house_guid', '29445d49-2770-1...')
+#1 E:\xampp\htdocs\tripclub\common\models\CarHouseEventHandler.php(60): yii\db\BaseActiveRecord->__set('car_house_guid', '29445d49-2770-1...')
+#2 [internal function]: common\models\CarHouseEventHandler->carHouseAward(Object(common\models\CarHouseEventHandler))
+#3 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Component.php(538): call_user_func(Array, Object(common\models\CarHouseEventHandler))
+#4 E:\xampp\htdocs\tripclub\console\controllers\MonthCheckController.php(64): yii\base\Component->trigger('carHouseAward', Object(common\models\CarHouseEventHandler))
+#5 [internal function]: console\controllers\MonthCheckController->actionCarHouse()
+#6 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#7 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Controller.php(91): yii\base\Controller->runAction('car-house', Array)
+#9 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Module.php(455): yii\console\Controller->runAction('car-house', Array)
+#10 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Application.php(161): yii\base\Module->runAction('month-check/car...', Array)
+#11 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Application.php(137): yii\console\Application->runAction('month-check/car...', Array)
+#12 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#13 E:\xampp\htdocs\tripclub\yii(31): yii\base\Application->run()
+#14 {main}
+2015-07-11 09:57:18 [-][-][-][info][application] $_SERVER = [
+    '#envTSLOGsss9116' => '300229408'
+    '#envTSLOGTSLOG9116' => '300232608'
+    '#envTSLOGXMediaLibrary9116' => '300235168'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\youngshunf\\AppData\\Roaming'
+    'CLASSPATH' => '.;E:\\Program Files\\Java\\jdk1.8.0_40\\lib;E:\\Program Files\\Java\\jdk1.8.0_40\\lib\\tools.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'YOUNG-PC'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\youngshunf'
+    'JAVA_HOME' => 'E:\\Program Files\\Java\\jdk1.8.0_40'
+    'LOCALAPPDATA' => 'C:\\Users\\youngshunf\\AppData\\Local'
+    'LOGONSERVER' => '\\\\YOUNG-PC'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OPENSSL_CONF' => 'C:\\OpenSSL\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Program Files\\Dell\\DW WLAN Card;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;c:\\Program Files\\WIDCOMM\\Bluetooth Software\\;c:\\Program Files\\WIDCOMM\\Bluetooth Software\\syswow64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\Program Files\\TortoiseSVN\\bin;E:\\xampp\\php;E:\\xampp\\php\\ext; E:\\Program Files\\Java\\jdk1.8.0_40\\bin;E:\\Program Files\\Java\\jdk1.8.0_40\\jre\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHPRC' => 'E:\\xampp\\php'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\YOUNGS~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\YOUNGS~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'young-pc'
+    'USERDOMAIN_ROAMINGPROFILE' => 'young-pc'
+    'USERNAME' => 'youngshunf'
+    'USERPROFILE' => 'C:\\Users\\youngshunf'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'SCRIPT_NAME' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'SCRIPT_FILENAME' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'PATH_TRANSLATED' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1436579838.2836
+    'REQUEST_TIME' => 1436579838
+    'argv' => [
+        0 => 'E:\\xampp\\htdocs\\tripclub\\yii'
+        1 => 'month-check/car-house'
+    ]
+    'argc' => 2
+]
+2015-07-11 10:00:46 [-][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: common\models\CarHouseAward::car_house _guid' in E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(246): yii\base\Component->__get('car_house _guid')
+#1 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\validators\Validator.php(235): yii\db\BaseActiveRecord->__get('car_house _guid')
+#2 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Model.php(333): yii\validators\Validator->validateAttributes(Object(common\models\CarHouseAward), Array)
+#3 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\db\ActiveRecord.php(416): yii\base\Model->validate(NULL)
+#4 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\db\BaseActiveRecord.php(582): yii\db\ActiveRecord->insert(true, NULL)
+#5 E:\xampp\htdocs\tripclub\common\models\CarHouseEventHandler.php(65): yii\db\BaseActiveRecord->save()
+#6 [internal function]: common\models\CarHouseEventHandler->carHouseAward(Object(common\models\CarHouseEventHandler))
+#7 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Component.php(538): call_user_func(Array, Object(common\models\CarHouseEventHandler))
+#8 E:\xampp\htdocs\tripclub\console\controllers\MonthCheckController.php(64): yii\base\Component->trigger('carHouseAward', Object(common\models\CarHouseEventHandler))
+#9 [internal function]: console\controllers\MonthCheckController->actionCarHouse()
+#10 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#11 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Controller.php(91): yii\base\Controller->runAction('car-house', Array)
+#13 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Module.php(455): yii\console\Controller->runAction('car-house', Array)
+#14 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Application.php(161): yii\base\Module->runAction('month-check/car...', Array)
+#15 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\console\Application.php(137): yii\console\Application->runAction('month-check/car...', Array)
+#16 E:\xampp\htdocs\tripclub\vendor\yiisoft\yii2\base\Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 E:\xampp\htdocs\tripclub\yii(31): yii\base\Application->run()
+#18 {main}
+2015-07-11 10:00:46 [-][-][-][info][application] $_SERVER = [
+    '#envTSLOGsss9116' => '300229408'
+    '#envTSLOGTSLOG9116' => '300232608'
+    '#envTSLOGXMediaLibrary9116' => '300235168'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\youngshunf\\AppData\\Roaming'
+    'CLASSPATH' => '.;E:\\Program Files\\Java\\jdk1.8.0_40\\lib;E:\\Program Files\\Java\\jdk1.8.0_40\\lib\\tools.jar'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'YOUNG-PC'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\youngshunf'
+    'JAVA_HOME' => 'E:\\Program Files\\Java\\jdk1.8.0_40'
+    'LOCALAPPDATA' => 'C:\\Users\\youngshunf\\AppData\\Local'
+    'LOGONSERVER' => '\\\\YOUNG-PC'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OPENSSL_CONF' => 'C:\\OpenSSL\\bin\\openssl.cfg'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Program Files\\Dell\\DW WLAN Card;;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;c:\\Program Files\\WIDCOMM\\Bluetooth Software\\;c:\\Program Files\\WIDCOMM\\Bluetooth Software\\syswow64;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;E:\\Program Files\\TortoiseSVN\\bin;E:\\xampp\\php;E:\\xampp\\php\\ext; E:\\Program Files\\Java\\jdk1.8.0_40\\bin;E:\\Program Files\\Java\\jdk1.8.0_40\\jre\\bin;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHPRC' => 'E:\\xampp\\php'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 61 Stepping 4, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3d04'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\YOUNGS~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\YOUNGS~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'young-pc'
+    'USERDOMAIN_ROAMINGPROFILE' => 'young-pc'
+    'USERNAME' => 'youngshunf'
+    'USERPROFILE' => 'C:\\Users\\youngshunf'
+    'windir' => 'C:\\Windows'
+    'PHP_SELF' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'SCRIPT_NAME' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'SCRIPT_FILENAME' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'PATH_TRANSLATED' => 'E:\\xampp\\htdocs\\tripclub\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1436580046.2953
+    'REQUEST_TIME' => 1436580046
+    'argv' => [
+        0 => 'E:\\xampp\\htdocs\\tripclub\\yii'
+        1 => 'month-check/car-house'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:05:55 [-][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method common\models\CommonUtil::LogMsg()' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php:24
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-04-24 07:05:55 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461481555.6175
+    'REQUEST_TIME' => 1461481555
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:34:40 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:34:40 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483280.1417
+    'REQUEST_TIME' => 1461483280
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:35:19 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:35:19 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483319.6505
+    'REQUEST_TIME' => 1461483319
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:35:42 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:35:42 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483342.4556
+    'REQUEST_TIME' => 1461483342
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:37:37 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:37:37 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483457.533
+    'REQUEST_TIME' => 1461483457
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:39:47 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(25): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(25): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:39:47 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483587.4321
+    'REQUEST_TIME' => 1461483587
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:41:07 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:41:07 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483667.863
+    'REQUEST_TIME' => 1461483667
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:41:24 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:41:24 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483684.9062
+    'REQUEST_TIME' => 1461483684
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:41:47 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#4 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(634): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\Connection->beginTransaction()
+#2 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#11 {main}
+Additional Information:
+
+2016-04-24 07:41:47 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483707.1739
+    'REQUEST_TIME' => 1461483707
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:42:11 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:42:11 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483731.469
+    'REQUEST_TIME' => 1461483731
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:42:38 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:42:38 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483758.038
+    'REQUEST_TIME' => 1461483758
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:43:07 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:43:07 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483787.6935
+    'REQUEST_TIME' => 1461483787
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:44:50 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:44:50 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483890.1321
+    'REQUEST_TIME' => 1461483890
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:45:19 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#11 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#20 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(346): yii\db\Command->queryInternal('')
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(138): yii\db\Command->query()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(112): yii\db\BatchQueryResult->fetchData()
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/BatchQueryResult.php(102): yii\db\BatchQueryResult->next()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(24): yii\db\BatchQueryResult->rewind()
+#9 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#18 {main}
+Additional Information:
+
+2016-04-24 07:45:19 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483919.039
+    'REQUEST_TIME' => 1461483919
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-04-24 07:45:56 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all(NULL)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\ActiveQuery->all()
+#10 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all(NULL)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\ActiveQuery->all()
+#8 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#17 {main}
+Additional Information:
+
+2016-04-24 07:45:56 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => 'FF1E80BC-CFCF-43C7-BBB7-531E15225ACA'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1461483956.4233
+    'REQUEST_TIME' => 1461483956
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2016-05-03 08:11:44 [-][-][-][error][yii\console\Exception] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "dayckeck".' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('dayckeck', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('dayckeck', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\console\Exception' with message 'Unknown command "dayckeck".' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php:169
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('dayckeck', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#3 {main}
+2016-05-03 08:11:44 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '727FC950-C8B4-4AE7-9917-6C26E8392158'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1462263104.8577
+    'REQUEST_TIME' => 1462263104
+    'argv' => [
+        0 => 'yii'
+        1 => 'dayckeck'
+    ]
+    'argc' => 2
+]
+2016-05-03 08:14:00 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#8 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all(NULL)
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\ActiveQuery->all()
+#10 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#17 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#18 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(216): yii\db\Connection->getSlavePdo()
+#3 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(831): yii\db\Command->prepare(true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#6 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all(NULL)
+#7 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/console/controllers/DayCheckController.php(22): yii\db\ActiveQuery->all()
+#8 [internal function]: console\controllers\DayCheckController->actionUpdateIncome()
+#9 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#10 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#11 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('update-income', Array)
+#12 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('update-income', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/updat...', Array)
+#14 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/updat...', Array)
+#15 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#16 /Applications/XAMPP/xamppfiles/htdocs/qiyouchaye/yii(31): yii\base\Application->run()
+#17 {main}
+Additional Information:
+
+2016-05-03 08:14:00 [-][-][-][info][application] $_SERVER = [
+    'TERM_PROGRAM' => 'Apple_Terminal'
+    'SHELL' => '/bin/bash'
+    'TERM' => 'xterm-256color'
+    'TMPDIR' => '/var/folders/xg/dlt4xfr13r51cflqyg1ttts00000gn/T/'
+    'Apple_PubSub_Socket_Render' => '/private/tmp/com.apple.launchd.UqgkH6Se5U/Render'
+    'TERM_PROGRAM_VERSION' => '361.1'
+    'TERM_SESSION_ID' => '727FC950-C8B4-4AE7-9917-6C26E8392158'
+    'USER' => 'youngmac'
+    'SSH_AUTH_SOCK' => '/private/tmp/com.apple.launchd.8uHgdoscxB/Listeners'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x19:0x34'
+    'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    'PWD' => '/Applications/XAMPP/xamppfiles/htdocs/qiyouchaye'
+    'LANG' => 'zh_CN.UTF-8'
+    'XPC_FLAGS' => '0x0'
+    'XPC_SERVICE_NAME' => '0'
+    'SHLVL' => '1'
+    'HOME' => '/Users/youngmac'
+    'LOGNAME' => 'youngmac'
+    'SECURITYSESSIONID' => '186aa'
+    '_' => '/usr/bin/php'
+    'OLDPWD' => '/Users/youngmac'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1462263240.3589
+    'REQUEST_TIME' => 1462263240
+    'argv' => [
+        0 => 'yii'
+        1 => 'day-check/update-income'
+    ]
+    'argc' => 2
+]
+2017-02-01 18:30:02 [-][-][-][error][yii\console\Exception] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: day-check/check-order' in /www/eoil/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /www/eoil/vendor/yiisoft/yii2/console/Controller.php(91): yii\base\Controller->runAction('check-order', Array)
+#1 /www/eoil/vendor/yiisoft/yii2/base/Module.php(455): yii\console\Controller->runAction('check-order', Array)
+#2 /www/eoil/vendor/yiisoft/yii2/console/Application.php(167): yii\base\Module->runAction('day-check/check...', Array)
+#3 /www/eoil/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/check...', Array)
+#4 /www/eoil/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#5 /www/eoil/yii(31): yii\base\Application->run()
+#6 {main}
+
+Next exception 'yii\console\Exception' with message 'Unknown command "day-check/check-order".' in /www/eoil/vendor/yiisoft/yii2/console/Application.php:169
+Stack trace:
+#0 /www/eoil/vendor/yiisoft/yii2/console/Application.php(143): yii\console\Application->runAction('day-check/check...', Array)
+#1 /www/eoil/vendor/yiisoft/yii2/base/Application.php(375): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 /www/eoil/yii(31): yii\base\Application->run()
+#3 {main}
+2017-02-01 18:30:02 [-][-][-][info][application] $_SERVER = [
+    'XDG_SESSION_ID' => '2085'
+    'SHELL' => '/bin/bash'
+    'MAILTO' => 'root'
+    'USER' => 'root'
+    'PATH' => '/sbin:/bin:/usr/sbin:/usr/bin'
+    '_' => '/bin/php'
+    'PWD' => '/root'
+    'LANG' => 'en_US.UTF-8'
+    'HOME' => '/root'
+    'SHLVL' => '2'
+    'LOGNAME' => 'root'
+    'XDG_RUNTIME_DIR' => '/run/user/0'
+    'PHP_SELF' => '/www/eoil/yii'
+    'SCRIPT_NAME' => '/www/eoil/yii'
+    'SCRIPT_FILENAME' => '/www/eoil/yii'
+    'PATH_TRANSLATED' => '/www/eoil/yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1485945002.0349
+    'REQUEST_TIME' => 1485945002
+    'argv' => [
+        0 => '/www/eoil/yii'
+        1 => 'day-check/check-order'
+    ]
+    'argc' => 2
+]

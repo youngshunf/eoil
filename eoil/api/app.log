@@ -1,0 +1,57 @@
+2016-10-02 04:26:30 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Use of undefined constant code - assumed 'code' in /Applications/XAMPP/xamppfiles/htdocs/survey/api/controllers/SiteController.php:145
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/survey/api/controllers/SiteController.php(145): yii\base\ErrorHandler->handleError(8, 'Use of undefine...', '/Applications/X...', 145, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/survey/api/controllers/SiteController.php(98): api\controllers\SiteController->sendSMS('18611348367', 4930)
+#2 [internal function]: api\controllers\SiteController->actionSendVerifyCode()
+#3 /Applications/XAMPP/xamppfiles/htdocs/survey/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/survey/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/survey/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('send-verify-cod...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/survey/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/send-verif...', Array)
+#7 /Applications/XAMPP/xamppfiles/htdocs/survey/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/survey/api/web/index.php(19): yii\base\Application->run()
+#9 {main}
+2016-10-02 04:26:30 [::1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'lnjvi3r2ao8ajup4o1g039e6m5'
+    '_csrf' => 'db0556691fdcc74977d0f972f1f7191c97b4a0744f740989cc4803d886daf862a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"X7W2b9WZvXxQ0y0Jv6H1cmSWcuUHgjdj\";}'
+    '_su' => 'e2d50e9e14dc91490a083f86398e11f2928a15854eaf39c58f42263348f3975aa:2:{i:0;s:3:\"_su\";i:1;s:14:\"[1,\"\",2592000]\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'V-BwVn8AAAEAAPDs3bsAAAAG'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'V-BwVn8AAAEAAPDs3bsAAAAG'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => 'PHPSESSID=lnjvi3r2ao8ajup4o1g039e6m5; _csrf=db0556691fdcc74977d0f972f1f7191c97b4a0744f740989cc4803d886daf862a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22X7W2b9WZvXxQ0y0Jv6H1cmSWcuUHgjdj%22%3B%7D; _su=e2d50e9e14dc91490a083f86398e11f2928a15854eaf39c58f42263348f3975aa%3A2%3A%7Bi%3A0%3Bs%3A3%3A%22_su%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'DYLD_LIBRARY_PATH' => '/Applications/XAMPP/xamppfiles/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2f PHP/7.0.2 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Applications/XAMPP/xamppfiles/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/XAMPP/xamppfiles/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/XAMPP/xamppfiles/htdocs/survey/api/web/index.php'
+    'REMOTE_PORT' => '50446'
+    'REDIRECT_URL' => '/survey/api/web/site/send-verify-code'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/survey/api/web/site/send-verify-code'
+    'SCRIPT_NAME' => '/survey/api/web/index.php'
+    'PHP_SELF' => '/survey/api/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1475375190.166
+    'REQUEST_TIME' => 1475375190
+]

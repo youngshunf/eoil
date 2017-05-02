@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的认证</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+	    <script type="text/javascript" src="../../js/zepto_1.1.3.js" ></script>
+	    <script type="text/javascript" src="../../js/config.js" ></script>
+	    <script type="text/javascript" src="../../js/lrz.bundle.js" ></script>
+	
+	<style>
+	   	
+	   </style>
+	</head>
+	<body ng-app="eoil" ng-controller="authCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title">我的认证</h1>
+			<!--<button class="mui-btn  mui-btn-link mui-pull-right" ng-click="submit()">提交</button>-->
+		</header>
+		<div class="mui-content">
+			<!--<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<p >姓名:</p>
+				</li>
+				<li class="mui-table-view-cell">
+					<p >身份证号:</p>
+				</li>
+				<li class="mui-table-view-cell">
+					<p >身份证正面</p>
+					<div class="flex-center">
+						<img class="img-responsive" src="../../images/around-run.png" />
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<p >身份证背面</p>
+					<div class="flex-center">
+						<img class="img-responsive" src="../../images/around-run.png" />
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<p >手持身份证</p>
+					<div class="flex-center">
+						<img class="img-responsive" src="../../images/around-run.png" />
+					</div>
+				</li>
+			</ul>-->
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/app.js" ></script>	
+	<script type="text/javascript">
+		//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+		});
+		mui.plusReady(function(){
+			getMyAuthView();
+		})
+		
+		function getMyAuthView(){
+			mui.ajax({
+				url:app.getAuthUrl(config.getMyAuthViewUrl),
+				type:"post",
+				success:function(rs){
+					$('.mui-content').html(rs);
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+		}
+		
+		
+	</script>
+
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>e油网</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<style>
+			.mui-slider-indicator {
+				bottom: 0;
+			}
+			.mui-slider {
+				background-color: #f2f2f2;
+			}
+			.title{
+				font-weight: bold;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				padding: 5px 5px;
+			}
+			.mui-media-body .title{
+				color: #666666;
+				font-weight: normal;
+				font-size: 13px;
+				height: 55px;
+				overflow: hidden;
+			}
+			
+			.mui-media-body .sub-txt{
+				font-size: 12px;
+				color: #999999;
+			}
+			.search-input input{
+					background: none !important;
+					margin-top: 5px;
+					margin-bottom: 10px;
+					border-left: none;
+					border-top: none;
+					border-right: none;
+					border-bottom: 1px solid #FFFFFF;
+					color: #FFFFFF;
+					width: 85%;
+					border-radius: 0;
+			}
+			.search-input span{
+				width: 15%;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">		
+			<h1 class="mui-title" id="headerTitle" style="left:10px">
+			<iframe id="weatherFrame" name="weather_inc" style="padding-top: 12px;" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3" width="280" height="45" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+			</h1>
+			<div class="search-input hide" id="search">
+			   <input type="text" placeholder="" id="keyword">
+			   <span>
+			   	 <span class="mui-icon mui-icon-search" id="search-btn"></span>
+			   </span>
+			  
+			</div>
+			
+			<button   class="mui-btn  mui-btn-link mui-pull-right" id="showSearch" ><span class="mui-icon mui-icon-search"></span></button>
+		</header>
+		<div class="mui-content">		
+			
+			 <div class="swiper-container" id="home-slider">
+		        <div class="swiper-wrapper" id="slider-item">
+		            
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+		    </div>
+			
+			<div  class="mui-slider" >
+				<div class="mui-slider-group">
+					<div class="mui-slider-item">
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="1">
+								<a href="#" >
+									<img src="../../images/icon/o_factory.png" />
+									<div class="mui-media-body">炼油厂</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="2">
+								<a href="#" >
+									<img src="../../images/icon/c_factory.png" />
+									<div class="mui-media-body">化工厂</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="3">
+								<a href="#" >
+									<img src="../../images/icon/man.png" />
+									<div class="mui-media-body">业务员</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate " data-cateid="4">
+								<a href="#" >
+									<img src="../../images/icon/car.png" />
+									<div class="mui-media-body">货运车</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="5" >
+								<a href="#"  >
+									<img src="../../images/oil_car.png" />
+									<div class="mui-media-body">油罐车</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="6">
+								<a href="#" id="tiyan">
+									<img src="../../images/look_goods.png" />
+									<div class="mui-media-body">找产品</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 goods-cate" data-cateid="7">
+								<a href="#" id="tiyan">
+									<img src="../../images/look_car.png" />
+									<div class="mui-media-body">找车</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cate-list" >
+								<a href="#" >
+									<img src="../../images/icon/more.png" />
+									<div class="mui-media-body">更多</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+		
+		
+				</div>	
+			
+			</div>
+			<div class="mui-row top-container">
+				<div class="mui-col-xs-3 flex-center" style="border-right: 1px solid #EEEEEE;height: 100%;">
+						<img class="img-responsive" style="height: 100%;" src="../../images/top.png" />
+				</div>
+				<div class="mui-col-xs-9 flex-center">
+				<div class="swiper-container" id="top-slider">
+			        <div class="swiper-wrapper" id="eiol-item" >
+			            <!--<div class="swiper-slide">
+			            		今日头条asdgaasdddddddddddddddddddddd1
+			            </div>
+			            <div class="swiper-slide">
+			            		今日头条2
+			            </div>
+			            <div class="swiper-slide">
+			            		 今日头条3
+			            </div>
+			            <div class="swiper-slide">
+			            		 今日头条4
+			            </div>-->
+			        </div>
+			    </div>
+				</div>
+			</div>
+			
+			<ul class="mui-table-view goods-list" style="margin-top: 5px;">
+				<li class="mui-table-view-cell " >
+					<h5 >最新发布 <a class="mui-pull-right" >更多</a></h5>				
+				</li>
+			</ul>
+			<div id="new-goods">
+				<div class="mui-loading ">
+					<div class="mui-spinner">
+					</div>
+				</div>
+				<!--<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-col-xs-6   ">
+									<table style="width: 100%;">
+										<tr>
+											<td width="70%">
+											<div style="text-align: left;">
+												<p class="mui-ellipsis-2">好东西好东西好东西好东西好东西</p>
+												<span class="red">￥ 500 吨</span>
+												<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt "></span>云南</p>
+											</div>
+											</td>
+											<td width="30%">
+												<img src="../../images/home.png" class="img-responsive" style="padding: 0;" />
+											</td>
+										</tr>
+									</table>
+								
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6">
+								<a href="#" id="run" class="around-run">
+									<table>
+										<tr>
+											<td>
+												<div style="text-align: left;">四处跑</div>
+											<div style="font-size: 12px;text-align: left;">工作机会就在附近</div>
+											</td>
+											<td>
+												<img src="../../images/around-run.png" />
+											</td>
+										</tr>
+									</table>
+								</a>
+							</li>
+						</ul>-->
+			</div>
+			
+			<ul class="mui-table-view" style="margin-top: 5px;">
+				<li class="mui-table-view-cell "   >
+					<h5 class="news-cate" data-cateid="1">行业新闻 <a class="mui-pull-right" >更多</a></h5>				
+				</li>
+			</ul>
+			<div id="news-one" >
+				<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>
+			</div>
+			<ul class="mui-table-view rec-goods-list" style="margin-top: 5px;">
+				<li class="mui-table-view-cell" >
+					<h5>推荐商品 <a class="mui-pull-right" >更多</a></h5>				
+				</li>
+			</ul>
+			<div id="rec-goods" >
+				<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>
+			</div>
+			<!--<ul class="mui-table-view" style="margin-top: 5px;">
+				<li class="mui-table-view-cell news-cate" data-cateid="2"  >
+					<h5>新闻头条 <a class="mui-pull-right" >更多</a></h5>				
+				</li>
+			</ul>
+			<div id="news-two" >
+				<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>
+			</div>-->
+			
+			
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/app.js" ></script>
+	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+	<script>
+		 mui.init();
+		mui.ready(function() {
+		
+		});
+		
+	</script>
+	<script type="text/javascript" src="../../js/swiper.min.js" ></script>
+	<script type="text/javascript" src="../../js/config.js" ></script>
+	<script type="text/javascript" src="../../js/home.get.js" ></script>
+	<script>
+	  var swiper;
+	    var vswiper;
+//	  var vswiper; = new Swiper('#top-slider', {
+//	        pagination: '.swiper-pagination',
+//	        paginationClickable: true,
+//	        spaceBetween: 0,
+//	        direction: 'vertical',
+//	        loop:true,
+//	        autoplay: 2000,
+//	        autoplayDisableOnInteraction: false
+//	    });
+		
+		mui.plusReady(function(){
+			plus.navigator.closeSplashscreen();
+			getHomeList();
+		});
+		
+		mui(document).on('tap','#showSearch',function(){
+			$('#headerTitle').addClass('hide');
+			$('#search').removeClass('hide');
+			$('#showSearch').addClass('hide');
+		})
+		
+		mui(document).on('tap','#search-btn',function(){
+			
+			$('#headerTitle').removeClass('hide');
+			$('#search').addClass('hide');
+			$('#showSearch').removeClass('hide');
+			var keyword=$('#keyword').val();
+			console.log(keyword);
+			if(keyword){
+				mui.openWindow({
+					url:'search.html',
+					extras:{
+						keyword:keyword
+					}
+				});
+			}
+		})
+		
+		window.addEventListener('show',function(){
+			//getHomeList();
+			document.getElementById('weatherFrame').contentWindow.location.reload(true);
+		});
+		mui(document).on('tap','.news-cate',function(){
+			var cateid=$(this).data('cateid');
+			console.log(cateid);
+			var url=serverBaseUrl+'news/index?cateid='+cateid;
+			mui.openWindow({
+				url:'../../load-url.html',
+				extras:{
+					url:url
+				}
+			})
+		})
+		mui(document).on('tap','.news',function(){
+			var newsid=$(this).data('newsid');
+			console.log(newsid);
+			var url=serverBaseUrl+'news/view?id='+newsid;
+			mui.openWindow({
+				url:'../../load-url.html',
+				extras:{
+					url:url
+				}
+			})
+		})
+		mui(document).on('tap','.goods-cate',function(){
+			var cateid=$(this).data('cateid');
+			console.log(cateid);
+			mui.openWindow({
+				url:'goods.html',
+				extras:{
+					cateid:cateid
+				}
+			})
+		})
+		mui(document).on('tap','.cate-list',function(){
+			mui.openWindow({
+				url:'cate.html',
+			})
+		})
+		
+		mui(document).on('tap','.goods',function(){
+			var id=$(this).data('id');
+			console.log(id);
+			mui.openWindow({
+				url:'../goods-detail.html',
+				extras:{
+					goodsid:id
+				}
+			})
+		})
+		mui(document).on('tap','.goods-list',function(){
+			mui.openWindow({
+				url:'../goods-list.html',
+			})
+		})
+		mui(document).on('tap','.rec-goods-list',function(){
+			mui.openWindow({
+				url:'../rec-goods-list.html',
+			})
+		})
+		
+		$('#weatherFrame').load(function(){
+			var  weatherFrame=$("#weatherFrame").contents();
+		    var  url=weatherFrame.find('a:first').attr('href');
+		    weatherFrame.find('a').attr('href','');
+		    weatherFrame.find('a').attr('target','');
+		    weatherFrame.on('click','a',function(){
+		    	    console.log(url);
+			    	mui.openWindow({
+			    	  	url:'../../load-url.html',
+			    	  	extras:{
+			    	  		url:url
+			    	  	}
+			    	  })
+		    });
+		})
+		
+	</script>
+</html>

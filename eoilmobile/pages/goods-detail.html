@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<link rel="stylesheet" href="../css/MPreview.mobile.css" />
+		<style>
+		.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			.modal-container{
+				position: absolute;
+			    top: 50%;
+			    height: 100%;
+			    width: 100%;
+			}
+			.modal-container .mui-content{
+				background: #FFFFFF;
+			}
+			.mui-modal{
+				background: rgba(0,0,0,0.2);
+			}
+			.cart-btn a,.buy-btn a{
+				color: #FFFFFF;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">商品详情</h1>
+			<button  class="mui-btn  mui-btn-link mui-pull-right" id="goods-love"><span class="iconfont icon-shoucang" ></span></button>
+			
+		</header>
+		<div class="overlay" id="overlay"></div>
+		<div class="mui-content" id="goods-detail" style="padding-bottom: 100px;">
+			<div class="mui-loading">
+				<div class="mui-spinner">
+				</div>
+			</div>	
+			<!--<div class="swiper-container swiper-wrap" >
+		        <div class="swiper-wrapper" id="slider-item">
+		            <div class="swiper-slide">1</div>
+		            <div class="swiper-slide">2</div>
+		        </div>
+		        <div class="swiper-pagination"></div>
+		    </div>	
+		    <ul class="mui-table-view">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p >商品名称</p>
+				
+				<p><span class="red">￥ 12332</span> <span class="sub-txt">/吨</span></p>
+				<p class="sub-txt">库存</p>
+				<p class="sub-txt">截止时间:2016-12-30</p>
+				<p class="sub-txt">地址:20
+				<a href="#" id="start-nav" class="mui-icon mui-icon-location mui-pull-right">导航</a>
+				</p>
+				
+			</li>
+			<li class="mui-table-view-cell " id="template-set"  >
+				<p ><a class="success">设置为我的模板</a></p>
+			</li>
+			 <li class="mui-table-view-cell mui-media" >
+			 	<a href="#" class="mui-navigate-right">
+				<img class="mui-media-object mui-pull-left img-circle" src="../images/home.png">
+					<div class="mui-media-body">
+						<p> 李娜</p>
+						<p class="sub-txt">18611348367</p>
+						<p ><span class="mui-badge mui-badge-green">个人用户</span></p>
+				</div>
+				</a>
+			</li>
+			
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<h5>商品详情</h5>
+				坎坎坷坷
+			</li>
+			</ul>-->
+		</div>
+		
+		<div id="cart-modal" class="mui-modal">
+				<div class="modal-container">
+				<div class="mui-content" style="width:100%;height: 100%;">
+					<p style="color: #fff;">X<a class="mui-icon mui-icon-close mui-pull-right" href="#cart-modal" style="padding: 5px;"></a> </p>
+					<div class="modal-goods">
+						<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media " >
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/around-run.png">
+							<div class="mui-media-body">
+								<div class="title ">
+								<p>jiaha</p>
+								<p><span class="red">￥12</span> <span class="sub-txt"> /吨</span></p>
+								<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>北京</p>
+								<p class="sub-txt">库存:''</p>
+								</div>
+							</div>
+						</a>
+					</li>
+						</ul>
+					</div>
+					<div class="mui-content-padded">
+						<label>购买数量:</label>
+						<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100000'>
+						<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+						<input class="mui-input-numbox" type="number" value="1" id="cart-number"/>
+						<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+					</div>
+					</div>
+					<div class="bottom-button">
+						<button class="mui-btn-mini mui-btn-block mui-btn-danger" id="add-cart">确定</button>
+					</div>
+				</div>
+				</div>
+		</div>
+		
+		<div id="buy-modal" class="mui-modal">
+				<div class="modal-container">
+				<div class="mui-content" style="width:100%;height: 100%;">
+					<p style="color: #fff;">X<a class="mui-icon mui-icon-close mui-pull-right" href="#buy-modal" style="padding: 5px;"></a> </p>
+					<div class="modal-goods">
+						<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media " >
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="../images/around-run.png">
+							<div class="mui-media-body">
+								<div class="title ">
+								<p>jiaha</p>
+								<p><span class="red">￥12</span> <span class="sub-txt"> /吨</span></p>
+								<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>北京</p>
+								<p class="sub-txt">库存:''</p>
+								</div>
+							</div>
+						</a>
+					</li>
+						</ul>
+					</div>
+					<div class="mui-content-padded">
+						<label>购买数量:</label>
+						<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100000'>
+						<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+						<input class="mui-input-numbox" type="number" value="1" id="buy-number"/>
+						<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+					</div>
+					</div>
+					<div class="bottom-button">
+						<button class="mui-btn-mini mui-btn-block mui-btn-danger" id="buy-goods">确定</button>
+					</div>
+				</div>
+				</div>
+		</div>
+		
+		<div class="bottom-button hide mui-row " id="shop-btn">
+			<div class="mui-col-xs-6 cart-btn flex-center">
+				<a href="#cart-modal">加入购物车</a>
+			</div>
+			<div class="mui-col-xs-6 buy-btn flex-center">
+				<a href="#buy-modal">立即购买</a>
+			</div>
+		</div>
+		
+		<!--<div class="bottom-button2 hide" id="deposit-pay">
+			<div class="text-center">您还没有支付保证金!</div>
+			<div class=" deposit-btn ">
+				立即支付保证金
+			</div>
+		</div>-->
+		
+</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/swiper.min.js" ></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>	
+	<script type="text/javascript" src="../js/zepto_1.1.3.js" ></script>
+	<script type="text/javascript" src="../js/mui.zoom.js" ></script>
+	<script type="text/javascript" src="../js/mui.previewimage.js" ></script>
+    <!--<script type="text/javascript" src="../js/MPreview.mobile.min.js" ></script>-->
+	<script>
+	var goodsData={};
+	var userInfo;
+	var swiper;
+	mui.init();
+	mui.previewImage();
+	mui.plusReady(function(){
+		var self=plus.webview.currentWebview();
+		var id=self.goodsid;
+		if(!id){
+			id=app.getUrlParam('id');
+		}
+		userInfo=app.getUserInfo();
+		getGoodsDetail(id);
+		getGoodsData(id);
+		app.getLocInfo();
+	});
+		
+	function getGoodsDetail(id){
+		console.log('goodsid:'+id);
+		var user=app.getUserState();
+					
+			var data={
+				id:id,						
+			};
+			mui.ajax({
+				url:app.getAuthUrl(config.getGoodsDetailUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+//					document.getElementById('goods-detail').innerHTML=rs;
+					$('#goods-detail').html(rs);
+					swiper= new Swiper('.swiper-container', {
+				        pagination: '.swiper-pagination',
+				        paginationClickable: true,
+				        spaceBetween: 0,
+				        centeredSlides: true,
+				        autoplay: 2500,
+				        autoplayDisableOnInteraction: false
+				    });
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	function getGoodsData(id){
+		console.log('goodsid:'+id);
+		var user=app.getUserState();
+					
+			var data={
+				id:id,						
+			};
+			mui.ajax({
+				url:app.getAuthUrl(config.getGoodsDataUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					console.log(rs);
+					if(typeof rs=='string'){
+						rs=JSON.parse(rs);
+					}
+					if(rs.result=='success'){
+						goodsData=rs.data;
+						renderGoodsInfo();
+					}
+					
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	
+	function renderGoodsInfo(){
+		 if(goodsData.goods.status==0 ||goodsData.goods.status==1){
+			console.log('goodsData.goods.user_guid:'+goodsData.goods.user_guid);
+			console.log('userInfo.user_guid:'+userInfo.user_guid)
+			if(goodsData.goods.user_guid!=userInfo.user_guid){
+				var html='<ul class="mui-table-view">\
+						<li class="mui-table-view-cell mui-media " >\
+						<a href="javascript:;">\
+							<img class="mui-media-object mui-pull-left" src="'+goodsData.photo+'">\
+							<div class="mui-media-body">\
+								<div class="title ">\
+								<p>'+goodsData.goods.name+'</p>\
+								<p><span class="red">￥'+goodsData.goods.price+'</span> <span class="sub-txt"> /'+goodsData.goods.unit+'</span></p>\
+								<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>'+goodsData.goods.address+'</p>\
+								<p class="sub-txt">库存:'+ goodsData.goods.stock +'</p>\
+								</div>\
+							</div>\
+						</a>\
+					</li>\
+						</ul>';
+//			   document.getElementsByClassName('modal-goods').innerHTML=html;
+			   $('.modal-goods').html(html);
+			   $('.mui-numbox').attr('data-numbox-max',goodsData.goods.stock);
+			   $('#shop-btn').removeClass('hide');
+//			   document.getElementById('shop-btn').className.replace('hide','');
+			}
+		}
+	}
+	
+	mui(document.body).on('tap','#goods-love',function(){
+		var data={
+			id:goodsData.goods.id
+		};
+		mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.goodsLoveUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				if(typeof rs=='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.toast('收藏成功!');
+				}else{
+					mui.toast('您已经收藏过了');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+			}
+		});
+	})
+	
+	mui(document).on('tap' ,'#add-cart',function(){
+		var count=$('#cart-number').val();
+		console.log(count);
+		var data={
+			id:goodsData.goods.id,
+			count:count
+		};
+		mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.addCartUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				console.log(rs);
+				if(typeof rs=='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.toast('加入购物车成功!');
+				}else{
+					mui.toast('加入购物车失败');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('加入购物车失败');
+			}
+		});
+	})
+	
+	mui(document).on('tap','#deposit-pay',function(){
+		var data={
+			id:goodsData.goods.id,
+		};
+		mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.payDepositUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				if(typeof rs=='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.openWindow({
+						url:'order/order-detail.html',
+						extras:{
+							orderid:rs.data
+						}
+					})
+				}else{
+					mui.toast('提交订单失败!');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('提交订单失败!');
+			}
+		});
+	})
+	
+	mui(document).on('tap','#buy-goods',function(){
+		var number=$('#buy-number').val();
+		var data={
+			id:goodsData.goods.id,
+			number:number
+		};
+		mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.submitOrderUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				if(typeof rs=='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.openWindow({
+						url:'order/order-detail.html',
+						extras:{
+							orderid:rs.data
+						}
+					})
+				}else{
+					mui.toast('提交订单失败!');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('提交订单失败!');
+			}
+		});
+	})
+	
+	
+	mui(document).on('tap','#template-set',function(){
+		var data={
+			id:goodsData.goods.id,
+		};
+		mui.ajax({
+			type:"post",
+			url:app.getAuthUrl(config.tempalteSetUrl),
+			data:{
+				data:data
+			},
+			success:function(rs){
+				if(typeof rs=='string'){
+					rs=JSON.parse(rs);
+				}
+				if(rs.result=='success'){
+					mui.alert('模板设置成功!');
+				}else{
+					mui.toast('您已经设置过了!');
+				}
+			},
+			error:function(e){
+				console.log(e.status);
+				mui.toast('提交订单失败!');
+			}
+		});
+	})
+	
+	mui(document).on('tap','#person-goods',function(){
+		var uid=$(this).data('uid');
+		mui.openWindow({
+			url:'user-goods.html',
+			extras:{
+				uid:uid
+			}
+		})
+	});
+	
+	mui(document).on('tap','#start-nav',function(){
+		var locInfo=localStorage.getItem('$locInfo');
+		var dst = new plus.maps.Point(goodsData.goods.lng,goodsData.goods.lat); // 天安门 
+		var src = new plus.maps.Point(locInfo.lng,locInfo.lat); // 大钟寺
+		// 调用系统地图显示 
+		plus.maps.openSysMap( dst, goodsData.goods.address, src );
+	});
+	
+	mui(document).on('tap','.user-location',function(){
+		var user=$(this).data('user');
+		console.log(user);
+		mui.openWindow({
+			url:'user_location.html',
+			extras:{
+				user:user
+			}
+		})
+	});
+
+	
+	
+	</script>
+</html>

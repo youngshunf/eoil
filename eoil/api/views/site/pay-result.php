@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>支付结果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/swiper.min.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<style>
+			ul.mui-table-view{
+				margin-bottom: 5px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">支付结果</h1>
+		</header>
+		<div class="mui-content" id="order-detail">
+		<?php if($result=='success'){?>
+			<ul class="mui-table-view pay-result hide" id="pay-success">
+			 <li class="mui-table-view-cell " >
+				<p class="text-center"><span class="iconfont icon-gouxuan success"></span></p>
+				<p class="text-center">支付成功!</p>
+			</li>
+			</ul>
+		<?php }?>	
+		
+		<?php if($result=='fail'){?>
+			<ul class="mui-table-view pay-result hide" id="pay-fail">
+			 <li class="mui-table-view-cell " ng-click="payOrder(item)">
+				<p class="text-center"><span class="iconfont icon-guanbi red"></span></p>
+				<p class="text-center">支付失败!</p>
+			</li>
+			</ul>
+		<?php }?>	
+			
+		</div>
+		
+		
+		
+		
+		
+		
+</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/swiper.min.js" ></script>
+	<script type="text/javascript" src="../../js/app.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>	
+	<script type="text/javascript" src="../../js/jquery-2.1.0.js" ></script>
+
+	<script>
+	
+    
+	
+	
+	
+	</script>
+</html>

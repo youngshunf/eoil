@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个体数据</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui-reset.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../css/swiper.min.css" /> 
+		<link rel="stylesheet" href="../../css/feedback-page.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+		<style>
+		.mui-table-view li:after {
+		    background-color: #FFFFFF;
+		}
+		.swiper-container {
+		    width: 100%;
+		    height: 300px;
+		    margin:20px auto;
+		} 
+		 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .mui-grid-view.mui-grid-9 .mui-table-view-cell{
+    	 border: none;
+    }
+    .steps{
+    	 margin-top: 10px;
+    }
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">		
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">个体数据
+			</h1>
+		</header>
+		<div class="mui-content" >
+	   <div id="step-one"   class="steps">
+	   <div class="mui-card">
+	   	<div class="mui-content-padded">
+	   		<ul class="mui-table-view">
+	   			<li class="">
+	   		<div >
+	   			<div class="sex-img-container" style="vertical-align: center;">
+	   			<p style="margin-top: 30px;">性别：</p>
+	   			</div>
+	   		<div class="sex-img-container" id="male">
+	   			<img src="../../images/icon/nan.png"  class="sex-img "/>
+	   		    <img src="../../images/icon/gougou1.png " class="checked active" />
+	   		</div>
+	   		<div class="sex-img-container" id="female">
+	   		<img src="../../images/icon/nv.png" class="sex-img " />
+	   		 <img src="../../images/icon/gougou1.png " class="checked" />
+	   		</div>
+	   		</div>
+	   		</li>
+	   		</ul>
+	   		
+	   	</div>
+	   	</div>
+	   
+	    <div class="mui-card" style="margin-top: 10px;">
+	   		<ul class="mui-table-view">
+	   			<li class="">
+	   				<div id='login-form' class="mui-input-group" >
+	   				<div class="mui-input-row">
+					<label>年龄</label>
+					<input id='age' type="number" class="mui-input-clear mui-input" placeholder="请输入年龄">
+					
+	   				</div>
+					<div class="mui-input-row">
+					<label>体重</label>
+					<input id='weight' type="number" class=" mui-input" placeholder="请输入体重">
+					<span class="input-right-label">KG</span>
+					</div>
+					<div class="mui-input-row">
+					<label>身高</label>
+					<input id='tall' type="number" class=" mui-input" placeholder="请输入身高">
+					<span class="input-right-label">CM</span>
+					</div>
+					<div class="mui-input-row">
+					<label>职业</label>
+					<input id='post' type="text" class="mui-input-clear mui-input" placeholder="请输入职业">
+					</div>
+					<div class="mui-input-row">
+					<label>期望的风格</label>
+					<input id='style' type="text" readonly="" class="mui-input-clear mui-input" >
+					<span class="input-right-label" ><a href="#popover"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+					</div>
+					
+					<div class="mui-input-row">
+					<label>体型选择</label>
+					<input id='shape' type="text" readonly="" class="mui-input-clear mui-input" >
+					<span class="input-right-label" ><a href="#popover-shape"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+					</div>
+					</div>
+	   			</li>
+	   		</ul>
+	   </div>
+	   
+	     <div  style="margin-top: 10px;">
+		   	<div class="mui-content-padded">
+		   		<button class="btn btn-block btn-warning next" >下一步</button>
+		   	</div>
+		   </div>
+		</div>	
+		
+			
+		<!--<div id="step-two" class="hide steps">
+			<p class="text-center">体型选择</p>
+	   <div class="">
+	   	
+	   	<div class="swiper-container" id="mySwiper">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">Slide 1</div>
+		        <div class="swiper-slide">Slide 2</div>
+		        <div class="swiper-slide">Slide 3</div>
+		    </div>
+		  
+		    <div class="swiper-pagination"></div>
+		</div>
+	   </div>
+	     <div  style="margin-top: 10px;">
+		   	<div class="mui-content-padded">
+		   		<button class="btn btn-block btn-warning next">下一步</button>
+		   	</div>
+		   </div>
+		</div>	-->
+		
+		<div id="step-two"  style="margin-top: 10px;" class="hide steps">
+			<p class="text-center">照片上传</p>
+		   <div class="feedback">	
+		   	<p>五官照(素颜)</p>
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12">
+									<div id='image-list' class="row image-list">
+									<div class="image-item space" data-imgtype="face">
+									<div class="image-close">X</div>
+									</div>
+										
+								     </div>
+								</li>
+							</ul>
+			</div>
+			
+			 <div class="feedback">	
+		   	<p>全身照(素颜)</p>
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-12 mui-col-sm-12 ">
+									<div id='image-list' class="row image-list">
+									<div class="image-item space" data-imgtype="total">
+									<div class="image-close">X</div>
+									</div>
+										
+								     </div>
+								</li>
+							</ul>
+			</div>
+	     <div  style="margin-top: 10px;">
+		   	<div class="mui-content-padded">
+		   		<button class="btn btn-block btn-warning submit" id="submit">提交</button>
+		   	</div>
+		   </div>
+		</div>	
+			
+			<div id="popover" class="mui-popover">
+			  <ul class="mui-table-view">
+			    <li class="mui-table-view-cell ex-style" data-style='1'><a href="#">少女</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='2'><a href="#">少年</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='3'><a href="#">自然</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='4'><a href="#">优雅</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='5'><a href="#">古典</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='6'><a href="#">自然异域</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='7'><a href="#">前卫</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='8'><a href="#">浪漫</a></li>
+			    <li class="mui-table-view-cell ex-style" data-style='9'><a href="#">戏剧</a></li>
+			  </ul>
+			</div>
+			
+			<div id="popover-shape" class="mui-popover">
+			  <ul class="mui-table-view">
+			    <li class="mui-table-view-cell ex-shape" data-shape='H'><a href="#">H</a></li>
+			    <li class="mui-table-view-cell ex-shape" data-shape='A'><a href="#">A</a></li>
+			    <li class="mui-table-view-cell ex-shape" data-shape='T'><a href="#">T</a></li>
+			    <li class="mui-table-view-cell ex-shape" data-shape='O'><a href="#">O</a></li>
+			    <li class="mui-table-view-cell ex-shape" data-shape='X'><a href="#">X</a></li>
+			  </ul>
+			</div>
+			
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/app.js" ></script>
+	<script type="text/javascript" src="../../js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript" src="../../js/config.js" ></script>
+	<script type="text/javascript" src="../../js/lrz.bundle.js" ></script>
+	<script type="text/javascript" src="../../js/task-photo-add.js" ></script>
+	<script>
+	     mui.init();
+		  var curStep=1;
+		  var sex=1;
+		  var style=1;
+		  var shape='H';
+		  var styleMap={
+		  	'1':'少女',
+		  	'2':'少年',
+		  	'3':'自然',
+		  	'4':'优雅',
+		  	'5':'古典',
+		  	'6':'自然异域',
+		  	'7':'前卫',
+		  	'8':'戏剧',
+		  	'9':'浪漫'
+		  };
+		  
+		  $('.ex-style').click(function(){
+		  	 style=$(this).data('style');
+		  	 $('#style').val(styleMap[style]);
+		  	 console.log(style);
+		  	 mui('.mui-popover').popover('hide');
+		  })
+		  
+		   $('.ex-shape').click(function(){
+		  	 shape=$(this).data('shape');
+		  	 $('#shape').val(shape);
+		  	 mui('.mui-popover').popover('hide');
+		  })
+		  
+		  $('#female').click(function(){
+		  	$('.checked').removeClass('active');
+		  	 $(this).find('.checked').addClass('active');
+		  	 sex=2;
+		  });
+		  $('#male').click(function(){
+		  	$('.checked').removeClass('active');
+		  	 $(this).find('.checked').addClass('active');
+		  	 sex=1;
+		  });
+		   function stepOne(){
+		     	$('.steps').addClass('hide');
+		     	$('.mui-title').html('个体数据');
+		  	 	  $('#step-one').removeClass('hide');
+		  	 	  curStep=1;
+		   }
+		   
+		  
+		  $('.next').click(function(){
+		  	 switch(curStep){
+		  	 	case 1:
+		  	 	  $('.steps').addClass('hide');
+		  	 	  $('.mui-title').html('照片上传');
+		  	 	  $('#step-two').removeClass('hide');
+		  	 	  document.title='照片上传';
+		  	 	  
+		  	 	  curStep=2;
+		  	 	  break;
+		  	 	case 2:
+		  	 	  $('.steps').addClass('hide');
+		  	 	  $('#step-three').removeClass('hide');
+		  	 	  curStep=3;
+		  	 	  break;
+		  	 }
+		  });
+		   var oldBack=mui.back;
+		  	mui.back = function(event) {
+				switch(curStep){
+		  	 	case 1:
+		  	 	  oldBack();
+		  	 	  break;
+		  	 	case 2:
+		  	 	  stepOne();
+		  	 	  break;
+		  	 	 case 3:
+		  	 	  $('.steps').addClass('hide');
+		  	 	  $('#step-two').removeClass('hide');
+		  	 	  curStep=2;
+		  	 	  break;
+		  	 }
+			};
+			
+			function submitData(){
+				var age=$('#age').val();
+				if(!age){
+					mui.alert('请填写年龄!');
+					stepOne();
+					return false;
+				}
+				var weight=$('#weight').val();
+				if(!weight){
+					mui.alert('请填写体重!');
+					stepOne();
+					return false;
+				}
+				var tall=$('#tall').val();
+				if(!tall){
+					mui.alert('请填写身高!');
+					stepOne();
+					return false;
+				}
+				var post=$('#post').val();
+				if(!post){
+					mui.alert('请填写职业!');
+					stepOne();
+					return false;
+				}
+				
+				var imgFace=plus.storage.getItem('persondata-face');
+				if(!imgFace){
+					mui.alert('请上传五官照!');
+					return false;
+				}
+				var imgTotal=plus.storage.getItem('persondata-total');
+				if(!imgTotal){
+					mui.alert('请上传全身照!');
+					return false;
+				}
+				
+				var data={
+					sex:sex,
+					weight:weight,
+					age:age,
+					tall:tall,
+					post:post,
+					style:style,
+					shape:shape,
+					imgFace:imgFace,
+					imgTotal:imgTotal
+				}
+				$.ajax({
+					type:"post",
+					url:config.updateUserDataUrl,
+					data:{
+						user:app.getUserState(),
+						data:data
+					},
+					dataType:'json',
+					success:function(rs){
+						if(rs.result=='success'){
+							mui.alert('数据提交成功,请等待形象狮为您诊断!');
+							var home=plus.webview.getWebviewById('pages/home/index.html');
+						    mui.fire(home,'show',null);
+							mui.openWindow({
+								url:'../../main.html'
+							});
+						}else{
+							mui.toast('提交失败,请稍候重试!');
+						}
+					},
+					error:function(e){
+						mui.toast('提交失败,请稍候重试!');
+						console.log(e.status);
+					}
+				});
+				
+			}
+			
+			$('#submit').click(function(){
+				console.log('提交数据');
+				submitData();
+			});
+			
+  </script>
+	</script>
+</html>

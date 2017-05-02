@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>积分记录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/style.css" />
+	    <link rel="stylesheet" href="../../Font-Awesome-3.2.1/css/font-awesome.min.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+
+			.mui-action-back span{
+				font-size: 16px;
+			}
+			.mui-badge {
+				border-radius: 0;
+				margin: 5px;
+			}
+			.mui-badge-danger{
+				background: #fa7407;
+			}
+			.mui-table-view-cell i{
+				color: #FA7407;
+				font-size: 18px;
+				margin:5px;
+			}
+			.cur-score span{
+				color: #4cda64;
+				font-size: 25px;
+				font-weight:600;
+				margin:10px;
+			}
+			#score-rule{
+				color: #1a72d6;
+				font-weight: 600;
+			}
+			
+			#score-title {
+				margin-top: 20px;
+			}
+			.score-rec{
+				padding-left: 50px;
+			}
+			.mui-icon-circle{
+				color: orange;
+			}
+			table p{
+				text-align: center;
+			}
+			.up-score{
+				color:#4cda64 ;
+			}
+			.down-score{
+				color: red;
+			}
+			.hide{
+				display: none;
+			}
+			.mui-center{
+				text-align: center;
+			}
+				</style>
+	</head>
+
+	<body>
+	      <header class="mui-bar mui-bar-nav">	
+			<a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">我的积分</h1>
+		</header>	
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="mui-content-padded">
+						<p>当前积分：<a id="score-rule" href="#"  class="mui-pull-right hide">如何获得积分</a></p>
+						<p class="cur-score mui-center"><span id="cur-score">0积分</span></p>
+						<br>
+						<a class="mui-btn mui-btn-danger mui-btn-block hide">积分兑换</a>
+					</div>
+					
+				</li>
+			</ul>
+			
+			<ul class="mui-table-view mui-table-view-chevron" id="score-title">
+				<li class="mui-table-view-cell title">
+					<div class="mui-content-padded">
+						<p>最近30天积分记录</p>
+					</div>
+				</li>
+			</ul>
+			<ul class="mui-table-view " id="score-list">
+					<li class="mui-table-view-cell">
+					<div class="mui-content-padded">
+						<div class="mui-loading">
+							<div class="mui-spinner">
+							</div>
+						</div>
+						</div>
+				</li>
+				<!--<li class="mui-table-view-cell score-rec">
+						<table width="100%">
+							<tr>
+								<td width="5%"><span class="mui-icon mui-icon-circle"></span></td>
+								<td width="40%"><p>2014</p></td>
+								<td width="45%"><p>签到</p></td>
+								<td width="10%"> <p><span class="up-score">10</span></p></td>
+							</tr>
+						</table>
+					</li>-->
+			</ul>
+			
+	
+		</div>
+	</body>
+	<script src="../../js/mui.min.js "></script>
+	<script src="../../js/app.js"></script>
+	<script src="../../js/zepto_1.1.3.js"></script>
+	<script src="../../js/config.js"></script>
+	<script>
+		mui.init();
+								
+		
+		mui.plusReady(function(){
+			getScoreList();
+			var userInfo=app.getUserInfo();
+			$('#cur-score').html(userInfo.score+"积分");
+		
+		});
+		
+		function getScoreList(){
+			var userInfo=app.getUserState();
+			var user={
+				user_guid:userInfo.user_guid,
+				access_token:userInfo.access_token,
+			};
+			$.ajax({
+				type:"post",
+				url:app.getAuthUrl(config.getScoreListUrl),
+				data:{
+					user:user,
+				},
+				success:function(rs){
+					$("#score-list").html(rs);
+				},
+				error:function(e){
+					$("#score-list").html("");
+					$("#score-list").html("<li class='mui-table-view-cell score-rec'><p class='mui-center'>获取积分列表列表失败</p></li>");	
+					console.log(JSON.stringify(e));
+				}
+			});
+			
+		}
+		
+		
+		
+		
+		
+	</script>
+
+</html>

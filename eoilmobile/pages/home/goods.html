@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/frozen.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" />
+		<style>
+		
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+			color: #27A187;
+			/*background: #FFFFFF;*/
+		}
+		.mui-bar-nav~.mui-content .mui-slider.mui-fullscreen {
+		    top: 94px;
+		}
+		.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+			padding: 5px 5px;
+		}
+		.input-group-addon{
+			background:#86919c;
+			color: #FFFFFF !important;
+		}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+		</header>
+		
+		<div  class=" mui-content ">
+			<div class="searh-bar">
+			<div class="ui-searchbar-wrap ui-border-b">
+			<!--<a href="#topPopover" class="search-type"><span id="search-type">名称</span> <i class="mui-icon mui-icon-arrowdown"></i></a>-->
+		    <div class="btn-group">
+  <span  class="dropdown-toggle search-type" data-toggle="dropdown">
+    <span id="search-type">名称 </span> <span class="caret"></span>
+  </span>
+  <ul class="dropdown-menu" role="menu">
+    <li class="searchType" data-type="1"><a href="#">名称</a></li>
+    <li class="searchType" data-type="2"><a href="#">地址</a></li>
+    <li class="searchType" data-type="3"><a href="#">发布者</a></li>
+    <li class="searchType" data-type="4"><a href="#">时间</a></li>
+  </ul>
+</div>
+		   <div class="ui-searchbar ui-border-radius " id="search-input">
+		        <i class="ui-icon-search"></i>
+		        <div class="ui-searchbar-text">搜索</div>
+		        <div class="ui-searchbar-input"><input value="" type="text" id="keyword" placeholder="搜索" autocapitalize="off"></div>
+		        <i class="ui-icon-close"></i>
+		    </div>
+		    <button class="ui-searchbar-cancel " id="search-submit">搜索</button>
+			</div>
+			<div class="input-group hide" id="time-container" >
+		    	<input type="text" class="form-control" id="startTime" readonly="readonly" placeholder="开始时间">
+			  <span class="input-group-addon">-</span>
+			  <input type="text" class="form-control" id="endTime" readonly="readonly" placeholder="结束时间">
+			 <span class="input-group-addon search-submit" >搜索</span>
+			</div>
+		</div>
+				<div id="goods-list" >
+				<!--<div class="mui-loading">
+					<div class="mui-spinner">
+					</div>
+				</div>-->
+
+				<!--<div  class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+							<div class="mui-scroll">
+								<a class="mui-control-item" href="#">
+									炼油厂
+								</a>
+								<a class="mui-control-item" href="#">
+									化工厂
+								</a>
+								<a class="mui-control-item" href="#">
+									业务员
+								</a>
+								<a class="mui-control-item" href="#">
+									油罐车
+								</a>
+								<a class="mui-control-item" href="#">
+									成品油
+								</a>
+								<a class="mui-control-item" href="#">
+									化工
+								</a>
+								<a class="mui-control-item" href="#">
+									车型
+								</a>
+							</div>
+							
+						</div>-->
+						
+				<!--<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media goods" data-id="11">
+						<a href="javascript:;"> <img class="mui-media-object mui-pull-left" src="http://images.eoil.mi2you.com/photo/20161207/thumb/201612072048388211.jpeg">
+							<div class="mui-media-body">
+								<div class="title ">
+									<p>汽油222</p>
+									<p><span class="red">￥12</span> <span class="sub-txt"> 元/吨</span></p>
+									<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>Beijing</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media goods" data-id="10">
+						<a href="javascript:;"> <img class="mui-media-object mui-pull-left" src="http://images.eoil.mi2you.com/photo/20161207/thumb/201612072044411081.jpeg">
+							<div class="mui-media-body">
+								<div class="title ">
+									<p>汽油</p>
+									<p><span class="red">￥12</span> <span class="sub-txt"> 元/吨</span></p>
+									<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>Beijing</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media goods" data-id="9">
+						<a href="javascript:;"> <img class="mui-media-object mui-pull-left" src="http://images.eoil.mi2you.com/photo/20161205/thumb/201612050337284935.jpeg">
+							<div class="mui-media-body">
+								<div class="title ">
+									<p>汽油</p>
+									<p><span class="red">￥12</span> <span class="sub-txt"> 元/吨</span></p>
+									<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>中国河南省商丘市梁园区团结中路88号</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media goods" data-id="8">
+						<a href="javascript:;"> <img class="mui-media-object mui-pull-left" src="http://images.eoil.mi2you.com/photo/20161204/thumb/201612042315299442.jpeg">
+							<div class="mui-media-body">
+								<div class="title ">
+									<p>好东西</p>
+									<p><span class="red">￥12</span> <span class="sub-txt"> 吨</span></p>
+									<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>中国北京市海淀区黑泉路</p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media goods" data-id="7">
+						<a href="javascript:;"> <img class="mui-media-object mui-pull-left" src="http://images.eoil.mi2you.com/photo/20161204/thumb/201612040732095635.jpeg">
+							<div class="mui-media-body">
+								<div class="title ">
+									<p>92#</p>
+									<p><span class="red">￥12</span> <span class="sub-txt"> 元/吨</span></p>
+									<p class="sub-txt"><span class="mui-icon mui-icon-location sub-txt"></span>河南省商丘市</p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>-->
+		</div>
+		
+					
+		
+	</body>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js" ></script>
+	    <script src="../../js/mui.js"></script>
+	    <!--<script type="text/javascript" src="../../js/bootstrap.min.js" ></script>-->
+		<script type="text/javascript" src="../../js/app.js"></script>
+		<script type="text/javascript" src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../js/moment.min.js" ></script>
+	<script>
+	var cateid;
+	var type=1;
+	     $('.ui-searchbar').click(function(){
+	     $('.ui-searchbar-wrap').addClass('focus');
+	     $('.ui-searchbar-input input').focus();
+	    });
+	    $('.ui-icon-close').click(function(e){
+	    	    e.stopPropagation();
+	    	    getGoodsCate();
+	        $('.ui-searchbar-wrap').removeClass('focus');
+	    });
+	var level=1;
+	var lastCateid;
+	    
+	    
+		mui.init();
+		
+		mui.plusReady(function(){
+			var self=plus.webview.currentWebview();
+			 cateid=self.cateid;
+			getGoodsCate();
+		});
+       
+	   function getGoodsCate(){
+		console.log('cateid:'+cateid);
+		
+			var data={
+				cateid:cateid,	
+			};
+			
+			mui.ajax({
+				url:app.getAuthUrl(config.getGoodsCateUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					$('#goods-list').html(rs);
+					var cateName=$('#cate-name').data('name');
+					$('.mui-title').html(cateName);
+					var deceleration = mui.os.ios?0.003:0.0009;
+					mui('.mui-scroll-wrapper').scroll({
+						bounce: false,
+						indicators: true, //是否显示滚动条
+						deceleration:deceleration
+					});
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	   $('.btn-group').click(function(){
+	   	 $(this).toggleClass('open');
+	   });
+	   
+	    function getSearchGoods(){
+		console.log('type:'+type);
+		var keyword=$('#keyword').val();
+		
+		 console.log(keyword);
+			var data={
+				type:type,	
+				keyword:keyword
+			};
+		if(type!=4){
+			if(!keyword){
+			mui.alert('请输入关键字搜索');
+			}
+		}
+		if(type==4){
+			var startTime=$('#startTime').val();
+			var endTime=$('#endTime').val();
+			if(!startTime){
+				mui.alert('请输入开始时间');
+			}
+			if(!endTime){
+				mui.alert('请输入结束时间');
+			}
+			data.startTime=startTime;
+			data.endTime=endTime;
+		}
+			mui.ajax({
+				url:app.getAuthUrl(config.searchGoodsUrl),
+				type:"post",
+				data:{data:data},
+				success:function(rs){
+					$('#goods-list').html(rs);
+					var cateName='搜索结果';
+					$('.mui-title').html(cateName);
+				},
+				error:function(e){
+					console.log(e.status);
+					console.log(JSON.stringify(e));
+				}
+			});
+	}
+	    
+	    var dDate = new Date();
+		dDate.setFullYear(moment().format('YYYY,M,DD'));
+		var minDate = new Date();
+		minDate.setFullYear(moment().format('YYYY,M,DD'));
+		var maxDate = new Date();
+		maxDate.setFullYear(2020, 12, 31);
+	    $('#startTime').click(function(){
+	    	  var that=$(this);
+	    	  plus.nativeUI.pickDate(function(e) {
+			var d = e.date;
+			var startTime = moment(d).format('YYYY-MM-DD');
+			that.val(startTime);
+		}, function(e) {
+			console.log("您没有选择日期");
+		}, {
+			title: "请选择开始时间",
+			date: dDate,
+			minDate: minDate,
+			maxDate: maxDate
+		});
+	    })
+	    $('#endTime').click(function(){
+	    	  var that=$(this);
+	    	  plus.nativeUI.pickDate(function(e) {
+			var d = e.date;
+			var endTime = moment(d).format('YYYY-MM-DD');
+			that.val(endTime);
+		}, function(e) {
+			console.log("您没有选择日期");
+		}, {
+			title: "请选择结束时间",
+			date: dDate,
+			minDate: minDate,
+			maxDate: maxDate
+		});
+	    })
+	    
+	   $(document).on('click','.searchType',function(){
+			type=$(this).data('type');
+			if(type==1){
+				$('#search-input').removeClass('hide');
+				$('#time-container').addClass('hide');
+				$('#search-type').html('名称');
+			}
+			if(type==2){
+				$('#search-input').removeClass('hide');
+				$('#time-container').addClass('hide');
+				$('#search-type').html('地址');
+			}
+			if(type==3){
+				$('#search-input').removeClass('hide');
+				$('#time-container').addClass('hide');
+				$('#search-type').html('发布者');
+			}
+			if(type==4){
+				$('.ui-searchbar-wrap').removeClass('focus');
+				$('#search-input').addClass('hide');
+				$('#time-container').removeClass('hide');
+				$('#search-type').html('时间');
+			}
+			$('.btn-group').removeClass('open');
+		})
+	   
+	   $(".search-submit").click(function(){
+	   	  getSearchGoods();
+	   })
+	   $("#search-submit").click(function(){
+	   	  getSearchGoods();
+	   })
+	
+		mui(document).on('tap','.goods',function(){
+			var id=$(this).data('id');
+			console.log(id);
+			mui.openWindow({
+				url:'../goods-detail.html',
+				extras:{
+					goodsid:id
+				},
+				waiting: {
+					autoShow: false
+				}
+			})
+		})
+		
+		mui(document).on('tap','.goods-cate',function(){
+			level++;
+			lastCateid=cateid;
+			cateid=$(this).data('cateid');
+			getGoodsCate(cateid);
+		})
+
+		
+		
+		window.addEventListener('show',function(){
+			
+		});
+		
+		var oldback=mui.back;
+		mui.back=function(){
+			if(level<=1){
+				oldback();
+			}else{
+				level--;
+				cateid=lastCateid;
+				getGoodsCate();
+			}
+		}
+		
+	
+	
+	</script>
+</html>

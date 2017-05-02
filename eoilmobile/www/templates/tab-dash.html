@@ -1,0 +1,45 @@
+<ion-view view-title="首页">
+  <ion-content >
+  	<!--首页滚动-->
+    <ion-slide-box class="home-slider" does-continue="true"  slide-interval="3000">
+	  <ion-slide>
+	    <div class="box "><h1>BLUE</h1></div>
+	  </ion-slide>
+	  <ion-slide>
+	    <div class="box "><h1>YELLOW</h1></div>
+	  </ion-slide>
+	  <ion-slide on-slide-changed="slideHasChanged(index)">
+	    <div class="box pink"><h1>PINK</h1></div>
+	  </ion-slide>
+	</ion-slide-box>
+	
+	<!--分类-->
+	<div class="row row-center margin-10">
+	  <div class="col col-center">
+	  	<img src="img/adam.jpg" class="img-responsive" />
+	  	<p class="text-center">炼油厂</p>
+	  </div>
+	  <div class="col col-center">
+	  	化工厂
+	  </div>
+	  <div class="col col-center">
+	  	业务员
+	  </div>
+	  <div class="col col-center">油罐车</div>
+	</div>
+	
+	<!--新闻头条-->
+	<ion-list>
+		<ion-item class="item item-divider" >
+		    行业头条
+		 </ion-item>
+		  <ion-item class="padding item-remove-animate item-avatar item-icon-right" ng-repeat="item in items">
+		   <img ng-src="{{chat.face}}">
+	        <h2>hello</h2>
+	        <p>{{item}}</p>
+	        <i class="icon ion-chevron-right icon-accessory"></i>
+		  </ion-item>
+		</ion-list>
+	
+  </ion-content>
+</ion-view>

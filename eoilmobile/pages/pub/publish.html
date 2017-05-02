@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发布</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/iconfont.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.css" />
+		<link rel="stylesheet" href="../../css/mui.poppicker.css" />
+		<script src="../../js/mui.min.js"></script>
+	   <script type="text/javascript" src="../../js/app.js" ></script>
+	  <script type="text/javascript" src="../../js/moment.min.js" ></script>
+		<script type="text/javascript" src="../../js/zepto.min.js" ></script>
+		<script type="text/javascript" src="../../js/config.js" ></script>
+		<script type="text/javascript" src="../../js/mui.picker.js" ></script>
+		<script type="text/javascript" src="../../js/mui.poppicker.js" ></script>
+	    <script type="text/javascript" src="../../js/angular.min.js" ></script>
+	    <script type="text/javascript" src="../../js/services/httpService.js" ></script>
+	    <script type="text/javascript" src="../../js/lrz.bundle.js" ></script>
+	    <script type="text/javascript" src="../../js/lodash.min.js" ></script>
+	    <script type="text/javascript" src="../../js/controller/publish.js" ></script>
+	   <style>
+	   	.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	   		height: 100px;
+	   		line-height: 70px;
+	   	}
+	   
+	   	
+	   </style>
+	</head>
+	<body ng-app="eoil" ng-controller="pubCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title">发布商品</h1>
+			<button   class="mui-btn  mui-btn-link mui-pull-right" ng-click="submit()">提交</button>
+		</header>
+		<div class="mui-content">
+			<div  >
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+		         	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 product-photo" ng-repeat="item in formData.photos" >
+						<div class="flex-container text-center" >
+							<span ng-click="removePhoto(item)"  class="remove-photo mui-icon mui-icon-minus-filled red" style="font-size: 24px;position: absolute;top: -2px;right: -2px;"></span>
+							<img ng-src="{{item.url}}"  class="img-responsive"/>
+			           </div>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 product-photo" ng-repeat="item in formData.imgs" >
+							<div class="flex-container text-center" >
+								<span ng-click="remove($index)"  class="remove-photo mui-icon mui-icon-minus-filled red" style="font-size: 24px;position: absolute;top: -2px;right: -2px;"></span>
+								<img ng-src="{{item}}"  class="img-responsive"/>
+				           </div>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" ng-click="addPhoto()">
+								<div class="img-container text-center " >
+									<span class="iconfont icon-xinjiandingdan"></span>
+									<div class="img-btm text-center">
+										<p>添加图片</p>
+									</div>
+					           </div>
+						</li>
+		</ul>	
+		
+		<form id='login-form' class="mui-input-group" style="margin-top: 5px;" >
+			<div class="mui-input-row">
+					<label>名称</label>
+					<input  type="text" ng-model="formData.name" class="mui-input-clear mui-input" placeholder="请填写商品名称">
+			</div>	
+			<div class="mui-input-row">
+					<label>价格</label>
+					<input  type="number" ng-model="formData.price" class="mui-input-clear mui-input" placeholder="请填写商品价格">
+					<span class="input-right-label">元</span>
+			</div>	
+			<!--<div class="mui-input-row" ng-click="selectTax()">
+					<label>是否含票</label>
+					<input  type="text" ng-model="formData.is_tax_str"  readonly="" class="mui-input-clear mui-input"  placeholder="请选择">
+					<span class="input-right-label" ><a href="#"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+			</div>-->
+			<div class="mui-input-row">
+					<label>库存</label>
+					<input  type="number" ng-model="formData.stock" class="mui-input-clear mui-input" placeholder="请填写库存数量">
+			</div>	
+			<div class="mui-input-row" ng-click="selectUnit()">
+					<label>单位</label>
+					<input  type="text" ng-model="formData.unit"  readonly="" class="mui-input-clear mui-input"  placeholder="请选择单位">
+					<span class="input-right-label" ><a href="#popover"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+			</div>
+			<div class="mui-input-row" ng-click="showCatePicker()">
+					<label>分类</label>
+					<input type="text" readonly=""  ng-model="formData.cate.cateStr" class="mui-input-clear mui-input"  placeholder="请选择分类">
+					<span class="input-right-label" ><a href="#"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+			</div>
+			<div class="mui-input-row" ng-click="selectEndTime()">
+					<label>下架时间</label>
+					<input  type="text" ng-model="formData.endTime" readonly="" class="mui-input-clear mui-input"  placeholder="请选择下架时间">
+					<span class="input-right-label" ><a href="#"><i class="mui-icon mui-icon-arrowright"></i></a></span>
+			</div>
+			<div class="mui-input-row">
+					<label>电话</label>
+					<input  type="text" ng-model="formData.mobile"  class="mui-input-clear mui-input"  placeholder="请填写联系电话">
+			</div>
+			<div class="mui-input-row">
+					<label>QQ</label>
+					<input  type="text" ng-model="formData.qq"  class="mui-input-clear mui-input"  placeholder="请填写QQ">
+			</div>
+			<div class="mui-input-row">
+					<label>所在地址</label>
+					<input  type="text" ng-model="formData.address"  class="mui-input-clear mui-input"  placeholder="请填写详细地址">
+			</div>
+			<div class="mui-input-row">
+					<label>商品描述</label>
+			</div>
+			<textarea class="mui-input" ng-model="formData.desc" placeholder="描述一下产品，如:型号、重量、规格等，可以让产品更快卖出~" rows="8"></textarea>
+			
+		</form>	
+	</div>
+	<!--<div class="empty-info" ng-if="!userInfo.is_auth">
+		<p>您还未认证,认证后才能发布商品</p>
+		<p class="text-center"><button class="mui-btn mui-btn-success" ng-click="goAuth()">去认证</button></p>
+	</div>-->
+		</div>
+	</body>
+		
+	<script type="text/javascript">
+		//启用双击监听
+		mui.init({
+			gestureConfig:{
+				doubletap:true
+			},
+		});
+		
+	</script>
+
+</html>
