@@ -24,7 +24,7 @@ var config={
 	updateProfileUrl:serverBaseUrl+'user/update-profile',//修改个人信息
 	checkUserAccountUrl:serverBaseUrl+'user/check-account',//更新用户帐户信息
 	submitAppealUrl:serverBaseUrl+'goods/submit-appeal',//提交申诉
-	submitCommentUrl:serverBaseUrl+'goods/submit-comment',//提交申诉
+	submitCommentUrl:serverBaseUrl+'goods/submit-comment',//提交评论
 	updateUserDataUrl:serverBaseUrl+'user/user-data',//用户数据提交
 	getWalletUrl:serverBaseUrl+'user/get-wallet',
 	getMessageStateUrl:serverBaseUrl+'user/get-message-state',//获取消息状态
